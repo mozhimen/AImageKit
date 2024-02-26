@@ -34,7 +34,11 @@ android {
 }
 
 dependencies {
-    implementation project(':SwiftKit:basick')
+    if (rootProject.name == "SwiftKit") {
+        implementation project(':basick')
+    } else {
+        implementation project(':SwiftKit:basick')
+    }
 
     //test
     testImplementation 'junit:junit:4.13.2'
