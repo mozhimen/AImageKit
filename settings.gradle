@@ -27,3 +27,4 @@ include ':imagek_glide'
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("C:\\Users\\${System.getenv().get("USERNAME")}\\Documents\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
+include ':imagek_glide_blur'

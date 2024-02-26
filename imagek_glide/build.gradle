@@ -10,6 +10,7 @@ android {
 
     defaultConfig {
         minSdk 19
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -32,7 +33,6 @@ android {
 
 dependencies {
     implementation project(':SwiftKit:basick')
-    implementation project(':imagek_blur')
     //////////////////////////////////////////////////////////////////
     //load image
 
@@ -43,7 +43,7 @@ dependencies {
 
     //////////////////////////////////////////////////////////////////
     //net
-    api 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
 
     //test
     testImplementation 'junit:junit:4.13.2'

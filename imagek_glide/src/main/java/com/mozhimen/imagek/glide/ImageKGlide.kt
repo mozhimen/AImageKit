@@ -15,7 +15,6 @@ import com.bumptech.glide.request.transition.Transition
 import com.mozhimen.basick.elemk.commons.I_AListener
 import com.mozhimen.basick.elemk.commons.I_Listener
 import com.mozhimen.imagek.glide.commons.ICustomTarget
-import com.mozhimen.imagek.glide.impls.BlurTransformation
 import com.mozhimen.imagek.glide.impls.RoundedBorderTransformation
 import com.mozhimen.basick.utilk.bases.IUtilK
 import com.mozhimen.basick.utilk.kotlinx.coroutines.safeResume
@@ -229,44 +228,6 @@ object ImageKGlide : IUtilK {
             Glide.with(imageView).load(res)
 //            .transition(DrawableTransitionOptions.withCrossFade())
                 .transform(CenterCrop(), RoundedCorners(cornerRadius))
-                .into(imageView)
-        })
-    }
-
-    @JvmStatic
-    fun loadImageBlurGlide(
-        imageView: ImageView,
-        res: Any?,
-        placeholder: Int,
-        error: Int,
-        radius: Int = BlurTransformation.BLUR_MAX_RADIUS,
-        sampling: Int = BlurTransformation.BLUR_DEFAULT_DOWN_SAMPLING
-    ) {
-        contractImageGlide(imageView.context,{
-            Glide.with(imageView)
-                .load(res)
-                .placeholder(placeholder)
-                .error(error)
-                .transition(DrawableTransitionOptions.withCrossFade())
-                .transform(BlurTransformation(radius, sampling))
-                .into(imageView)
-        })
-    }
-
-    @JvmStatic
-    fun loadImageBlurGlide(
-        imageView: ImageView,
-        res: Any?,
-        placeholder: Int,
-        radius: Int = BlurTransformation.BLUR_MAX_RADIUS,
-        sampling: Int = BlurTransformation.BLUR_DEFAULT_DOWN_SAMPLING
-    ) {
-        contractImageGlide(imageView.context,{
-            Glide.with(imageView)
-                .load(res)
-                .placeholder(placeholder)
-                .transition(DrawableTransitionOptions.withCrossFade())
-                .transform(BlurTransformation(radius, sampling))
                 .into(imageView)
         })
     }

@@ -4,15 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.imagek.blur'
+    namespace 'com.mozhimen.imagek.glide.blur'
     compileSdk 33
 
     defaultConfig {
         minSdk 19
-        //renderscript
-        renderscriptTargetApi 18
-        renderscriptSupportModeEnabled true
-        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -35,6 +31,8 @@ android {
 
 dependencies {
     implementation project(':SwiftKit:basick')
+    implementation project(project.path.replace(project.name, '') +':imagek_glide')
+    implementation project(project.path.replace(project.name, '') +':imagek_blur')
 
     //test
     testImplementation 'junit:junit:4.13.2'
