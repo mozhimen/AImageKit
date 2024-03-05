@@ -23,8 +23,11 @@ rootProject.name = "AImageKit"
 include ':app'
 include ':imagek_blur'
 include ':imagek_glide'
+include ':imagek_glide_blur'
+include ':imagek_glide_compose'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("C:\\Users\\${System.getenv().get("USERNAME")}\\Documents\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
-include ':imagek_glide_blur'
+include ':SwiftKit:composek'
+
