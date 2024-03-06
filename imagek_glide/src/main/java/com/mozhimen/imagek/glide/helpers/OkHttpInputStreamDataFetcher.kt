@@ -10,7 +10,7 @@ import com.bumptech.glide.util.ContentLengthInputStream
 import com.bumptech.glide.util.Preconditions
 import com.mozhimen.basick.elemk.commons.IA_AListener
 import com.mozhimen.imagek.glide.mos.ImageKGlideFile
-import com.mozhimen.basick.utilk.bases.IUtilK
+import com.mozhimen.basick.utilk.commons.IUtilK
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Request

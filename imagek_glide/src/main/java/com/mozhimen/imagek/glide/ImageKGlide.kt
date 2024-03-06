@@ -16,7 +16,7 @@ import com.mozhimen.basick.elemk.commons.I_AListener
 import com.mozhimen.basick.elemk.commons.I_Listener
 import com.mozhimen.imagek.glide.commons.ICustomTarget
 import com.mozhimen.imagek.glide.impls.RoundedBorderTransformation
-import com.mozhimen.basick.utilk.bases.IUtilK
+import com.mozhimen.basick.utilk.commons.IUtilK
 import com.mozhimen.basick.utilk.kotlinx.coroutines.safeResume
 import kotlinx.coroutines.suspendCancellableCoroutine
 

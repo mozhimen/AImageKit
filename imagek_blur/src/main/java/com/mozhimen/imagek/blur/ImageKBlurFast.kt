@@ -3,7 +3,7 @@ package com.mozhimen.imagek.blur
 import android.graphics.Bitmap
 import androidx.annotation.FloatRange
 import androidx.annotation.IntRange
-import com.mozhimen.basick.utilk.bases.IUtilK
+import com.mozhimen.basick.utilk.commons.IUtilK
 import kotlin.math.min
 import kotlin.math.max
 

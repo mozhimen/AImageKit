@@ -3,9 +3,13 @@ package com.mozhimen.imagek.blur.utils
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
+import android.renderscript.Allocation
+import android.renderscript.Element
+import android.renderscript.RSIllegalArgumentException
+import android.renderscript.RenderScript
+import android.renderscript.ScriptIntrinsicBlur
 import android.view.View
 import androidx.annotation.ChecksSdkIntAtLeast
-import androidx.renderscript.*
 import com.mozhimen.basick.elemk.android.os.cons.CVersCode
 import com.mozhimen.basick.utilk.bases.BaseUtilK
 import com.mozhimen.basick.utilk.kotlin.UtilKNumber
