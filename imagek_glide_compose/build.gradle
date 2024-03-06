@@ -30,8 +30,13 @@ android {
 }
 
 dependencies {
+    implementation project(':SwiftKit:basick')
     implementation project(':SwiftKit:composek')
-    api 'com.google.accompanist:accompanist-glide:0.15.0'
+    api 'com.github.bumptech.glide:compose:1.0.0-beta01'//图片加载库
+    api project(project.path.replace(project.name, '') +':imagek_glide')
+
+
+//    api 'com.google.accompanist:accompanist-glide:0.15.0'
     
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
