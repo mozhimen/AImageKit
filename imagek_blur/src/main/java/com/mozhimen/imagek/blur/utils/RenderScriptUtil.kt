@@ -16,7 +16,7 @@ import com.mozhimen.basick.utilk.kotlin.UtilKNumber
 import com.mozhimen.imagek.blur.ImageKBlurFast
 import com.mozhimen.basick.utilk.android.graphics.UtilKBitmapDeal
 import com.mozhimen.basick.utilk.android.os.UtilKBuildVersion
-import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
+import com.mozhimen.basick.utilk.android.util.UtilKLongLogWrapper
 import com.mozhimen.basick.utilk.android.util.dt
 import com.mozhimen.basick.utilk.android.util.et
 import com.mozhimen.basick.utilk.android.view.UtilKView
@@ -110,8 +110,8 @@ object RenderScriptUtil : BaseUtilK() {
         val result = UtilKBitmapDeal.applyBitmapAnyResize(origin, outWidth, outHeight)
         origin.recycle()
         val time = System.currentTimeMillis() - _startTime
-        if (UtilKLogWrapper.isOpenLog())
-            UtilKLogWrapper.i("scriptBlur: 模糊用时：【" + time + "ms】")
+        if (UtilKLongLogWrapper.isOpenLog())
+            UtilKLongLogWrapper.i("scriptBlur: 模糊用时：【" + time + "ms】")
         return result
     }
 
@@ -123,8 +123,8 @@ object RenderScriptUtil : BaseUtilK() {
         if (tempOrigin == null || tempOrigin.isRecycled) return null
         tempOrigin = UtilKBitmapDeal.applyBitmapAnyResize(tempOrigin, outWidth, outHeight)
         val time = System.currentTimeMillis() - _startTime
-        if (UtilKLogWrapper.isOpenLog())
-            UtilKLogWrapper.i("fastBlur: 模糊用时：【" + time + "ms】")
+        if (UtilKLongLogWrapper.isOpenLog())
+            UtilKLongLogWrapper.i("fastBlur: 模糊用时：【" + time + "ms】")
         return tempOrigin
     }
 }
