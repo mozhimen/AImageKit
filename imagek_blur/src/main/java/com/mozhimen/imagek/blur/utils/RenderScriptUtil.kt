@@ -17,8 +17,8 @@ import com.mozhimen.imagek.blur.ImageKBlurFast
 import com.mozhimen.basick.utilk.android.graphics.UtilKBitmapDeal
 import com.mozhimen.basick.utilk.android.os.UtilKBuildVersion
 import com.mozhimen.basick.utilk.android.util.UtilKLongLogWrapper
-import com.mozhimen.basick.utilk.android.util.dt
-import com.mozhimen.basick.utilk.android.util.et
+import com.mozhimen.basick.utilk.android.util.d
+import com.mozhimen.basick.utilk.android.util.e
 import com.mozhimen.basick.utilk.android.view.UtilKView
 
 /**
@@ -71,10 +71,10 @@ object RenderScriptUtil : BaseUtilK() {
     fun blur(origin: Bitmap?, resultWidth: Int, resultHeight: Int, radius: Float): Bitmap? {
         _startTime = System.currentTimeMillis()
         return if (isRenderScriptSupported()) {
-            "blur: 脚本模糊".dt(TAG)
+            "blur: 脚本模糊".d(TAG)
             scriptBlur(origin, resultWidth, resultHeight, radius)
         } else {
-            "blur: 快速模糊".dt(TAG)
+            "blur: 快速模糊".d(TAG)
             fastBlur(origin, resultWidth, resultHeight, radius)
         }
     }
@@ -94,7 +94,7 @@ object RenderScriptUtil : BaseUtilK() {
             }
         }
         if (blur == null) {
-            "scriptBlur: 脚本模糊失败，转fastBlur".et(TAG)
+            "scriptBlur: 脚本模糊失败，转fastBlur".e(TAG)
             blurInput.destroy()
             blurOutput.destroy()
             return fastBlur(origin, outWidth, outHeight, radius)

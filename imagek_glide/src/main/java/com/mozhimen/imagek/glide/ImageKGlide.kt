@@ -3,8 +3,7 @@ package com.mozhimen.imagek.glide
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import android.util.Log
-import com.mozhimen.basick.utilk.android.util.UtilKLog
+import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
 import android.widget.ImageView
 import androidx.annotation.WorkerThread
 import com.bumptech.glide.Glide
@@ -64,17 +63,17 @@ object ImageKGlide : IUtilK {
         contractImageGlide(context, {
             Glide.with(context!!).asBitmap().load(res).into(object : ICustomTarget<Bitmap>() {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
-                    UtilKLog.dt(TAG, "onResourceReady: res $res resource width ${resource.width} height ${resource.height}")
+                    UtilKLogWrapper.d(TAG, "onResourceReady: res $res resource width ${resource.width} height ${resource.height}")
                     coroutine.safeResume(resource.width to resource.height)
                 }
 
                 override fun onLoadFailed(errorDrawable: Drawable?) {
-                    UtilKLog.dt(TAG, "onLoadFailed: resource width 0 height 0")
+                    UtilKLogWrapper.d(TAG, "onLoadFailed: resource width 0 height 0")
                     coroutine.safeResume(0 to 0)
                 }
             })
         }, {
-            UtilKLog.dt(TAG, "onLoadFailed: onError of glide")
+            UtilKLogWrapper.d(TAG, "onLoadFailed: onError of glide")
             coroutine.safeResume(0 to 0)
         })
     }
