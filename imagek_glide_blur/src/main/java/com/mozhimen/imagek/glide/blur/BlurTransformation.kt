@@ -8,7 +8,7 @@ import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
 import com.mozhimen.imagek.blur.ImageKBlurFast
 import com.mozhimen.imagek.blur.ImageKBlurRenderScript
-import com.mozhimen.basick.utilk.android.app.UtilKApplicationReflect
+import com.mozhimen.basick.utilk.android.app.UtilKApplicationWrapper
 import java.security.MessageDigest
 
 /**
@@ -24,7 +24,7 @@ class BlurTransformation @JvmOverloads constructor(
     private val sampling: Int = BLUR_DEFAULT_DOWN_SAMPLING
 ) : BitmapTransformation() {
 
-    private val _context by lazy { UtilKApplicationReflect.instance.get() }
+    private val _context by lazy { UtilKApplicationWrapper.instance.get() }
 
     companion object {
         private const val VERSION = 1
