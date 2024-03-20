@@ -99,7 +99,7 @@ object RenderScriptUtil : BaseUtilK() {
             blurOutput.destroy()
             return fastBlur(origin, outWidth, outHeight, radius)
         }
-        blur.setRadius(UtilKNumber.normalize(radius, 0f, 20f))
+        blur.setRadius(UtilKNumber.constraint(radius, 0f, 20f))
         blur.setInput(blurInput)
         blur.forEach(blurOutput)
         blurOutput.copyTo(origin)
@@ -119,7 +119,7 @@ object RenderScriptUtil : BaseUtilK() {
     fun fastBlur(origin: Bitmap?, outWidth: Int, outHeight: Int, radius: Float): Bitmap? {
         var tempOrigin = origin
         if (tempOrigin == null || tempOrigin.isRecycled) return null
-        tempOrigin = ImageKBlurFast.blurBitmap(tempOrigin, UtilKNumber.normalize(radius, 0f, 20f).toInt(), false)
+        tempOrigin = ImageKBlurFast.blurBitmap(tempOrigin, UtilKNumber.constraint(radius, 0f, 20f).toInt(), false)
         if (tempOrigin == null || tempOrigin.isRecycled) return null
         tempOrigin = UtilKBitmapDeal.applyBitmapAnyResize(tempOrigin, outWidth, outHeight)
         val time = System.currentTimeMillis() - _startTime
