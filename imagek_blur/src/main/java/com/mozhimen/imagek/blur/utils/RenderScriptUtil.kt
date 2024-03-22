@@ -110,7 +110,7 @@ object RenderScriptUtil : BaseUtilK() {
         val result = UtilKBitmapDeal.applyBitmapAnyResize(origin, outWidth, outHeight)
         origin.recycle()
         val time = System.currentTimeMillis() - _startTime
-        if (UtilKLongLogWrapper.isOpenLog())
+        if (UtilKLongLogWrapper.isLogEnable())
             UtilKLongLogWrapper.i("scriptBlur: 模糊用时：【" + time + "ms】")
         return result
     }
@@ -123,7 +123,7 @@ object RenderScriptUtil : BaseUtilK() {
         if (tempOrigin == null || tempOrigin.isRecycled) return null
         tempOrigin = UtilKBitmapDeal.applyBitmapAnyResize(tempOrigin, outWidth, outHeight)
         val time = System.currentTimeMillis() - _startTime
-        if (UtilKLongLogWrapper.isOpenLog())
+        if (UtilKLongLogWrapper.isLogEnable())
             UtilKLongLogWrapper.i("fastBlur: 模糊用时：【" + time + "ms】")
         return tempOrigin
     }
