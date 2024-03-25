@@ -65,7 +65,7 @@ object RenderScriptUtil : BaseUtilK() {
 
     @JvmStatic
     fun blur(view: View, scaledRatio: Float, radius: Float, fullScreen: Boolean, cutoutX: Int, cutoutY: Int): Bitmap? =
-        blur(UtilKView.getBitmapForViewBackground(view, scaledRatio, fullScreen, cutoutX, cutoutY), view.width, view.height, radius)
+        blur(UtilKView.getBitmap_ofViewBackground(view, scaledRatio, fullScreen, cutoutX, cutoutY), view.width, view.height, radius)
 
     @JvmStatic
     fun blur(origin: Bitmap?, resultWidth: Int, resultHeight: Int, radius: Float): Bitmap? {
