@@ -20,6 +20,7 @@ import com.mozhimen.basick.utilk.android.util.UtilKLongLogWrapper
 import com.mozhimen.basick.utilk.android.util.d
 import com.mozhimen.basick.utilk.android.util.e
 import com.mozhimen.basick.utilk.android.view.UtilKView
+import com.mozhimen.basick.utilk.android.view.UtilKViewWrapper
 
 /**
  * @ClassName RenderScriptHelper
@@ -65,7 +66,7 @@ object RenderScriptUtil : BaseUtilK() {
 
     @JvmStatic
     fun blur(view: View, scaledRatio: Float, radius: Float, fullScreen: Boolean, cutoutX: Int, cutoutY: Int): Bitmap? =
-        blur(UtilKView.getBitmap_ofViewBackground(view, scaledRatio, fullScreen, cutoutX, cutoutY), view.width, view.height, radius)
+        blur(UtilKViewWrapper.getBitmap_ofViewBackground(view, scaledRatio, fullScreen, cutoutX, cutoutY), view.width, view.height, radius)
 
     @JvmStatic
     fun blur(origin: Bitmap?, resultWidth: Int, resultHeight: Int, radius: Float): Bitmap? {
