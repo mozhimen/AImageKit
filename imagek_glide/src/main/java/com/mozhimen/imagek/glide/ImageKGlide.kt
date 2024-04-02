@@ -35,32 +35,27 @@ suspend fun String.isImageVertical(context: Context?): Boolean =
 
 //////////////////////////////////////////////////////////////////
 
-fun ImageView.loadImageGlide(res: Any) {
-    ImageKGlide.loadImageGlide(this, res)
+fun ImageView.loadImage_ofGlide(res: Any) {
+    ImageKGlide.loadImage_ofGlide(this, res)
 }
 
-fun ImageView.loadImageRoundedCornerGlide(res: Any, radius: Int) {
-    ImageKGlide.loadImageRoundedCornerGlide(this, res, radius)
+fun ImageView.loadImageRoundedCorner_ofGlide(res: Any, radius: Int) {
+    ImageKGlide.loadImageRoundedCorner_ofGlide(this, res, radius)
 }
 
-fun ImageView.loadImageComplexGlide(
+fun ImageView.loadImageComplex_ofGlide(
     res: Any, placeholder: Int, error: Int
 ) {
-    ImageKGlide.loadImageComplexGlide(this, res, placeholder, error)
+    ImageKGlide.loadImageComplex_ofGlide(this, res, placeholder, error)
 }
 
-@Deprecated(
-    message = "replace to coil 用coil替代glide",
-    replaceWith = ReplaceWith(
-        expression = "ImageKCoil",
-        imports = ["com.mozhimen.imagek.coil.ImageKCoil"]
-    )
-)
+//////////////////////////////////////////////////////////////////
+
 object ImageKGlide : IUtilK {
 
     @JvmStatic
     suspend fun getImageWidthAndHeight(res: Any?, context: Context?): Pair<Int, Int> = suspendCancellableCoroutine { coroutine ->
-        contractImageGlide(context, {
+        contractImage_ofGlide(context, {
             Glide.with(context!!).asBitmap().load(res).into(object : ICustomTarget<Bitmap>() {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     UtilKLogWrapper.d(TAG, "onResourceReady: res $res resource width ${resource.width} height ${resource.height}")
@@ -103,7 +98,7 @@ object ImageKGlide : IUtilK {
     @JvmStatic
     @WorkerThread
     fun obj2Bitmap(obj: Any, context: Context?, placeholder: Int, width: Int, height: Int): Bitmap? {
-        return contractImageGlideRes(context) {
+        return contractImageRes_ofGlide(context) {
             Glide.with(context!!).asBitmap().load(obj)
                 .centerCrop()
                 .placeholder(placeholder)
@@ -116,7 +111,7 @@ object ImageKGlide : IUtilK {
     @JvmStatic
     @WorkerThread
     fun obj2Bitmap(obj: Any, context: Context?, placeholder: Int, width: Int, height: Int, cornerRadius: Int): Bitmap? {
-        return contractImageGlideRes(context) {
+        return contractImageRes_ofGlide(context) {
             Glide.with(context!!).asBitmap().load(obj)
                 .centerCrop()
                 .transform(RoundedCorners(cornerRadius))
@@ -130,23 +125,23 @@ object ImageKGlide : IUtilK {
     //////////////////////////////////////////////////////////////////////////////////
 
     @JvmStatic
-    fun loadImageGlide(
+    fun loadImage_ofGlide(
         imageView: ImageView, res: Any?
     ) {
-        contractImageGlide(imageView.context, {
+        contractImage_ofGlide(imageView.context, {
             Glide.with(imageView).load(res)
                 .into(imageView)
         })
     }
 
     @JvmStatic
-    fun loadImageComplexGlide(
+    fun loadImageComplex_ofGlide(
         imageView: ImageView,
         res: Any?,
         placeholder: Int,
         error: Int
     ) {
-        contractImageGlide(imageView.context, {
+        contractImage_ofGlide(imageView.context, {
             Glide.with(imageView).load(res)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .error(error)
@@ -159,13 +154,13 @@ object ImageKGlide : IUtilK {
      * 加载圆形图片
      */
     @JvmStatic
-    fun loadImageCircleGlide(
+    fun loadImageCircle_ofGlide(
         imageView: ImageView,
         res: Any?,
         placeholder: Int,
         error: Int
     ) {
-        contractImageGlide(imageView.context, {
+        contractImage_ofGlide(imageView.context, {
             Glide.with(imageView).load(res)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .transform(CircleCrop())
@@ -179,7 +174,7 @@ object ImageKGlide : IUtilK {
      * 加载带边框的圆角图片
      */
     @JvmStatic
-    fun loadImageBorderRoundedCornerGlide(
+    fun loadImageBorderRoundedCorner_ofGlide(
         imageView: ImageView,
         res: Any?,
         placeholder: Int,
@@ -187,7 +182,7 @@ object ImageKGlide : IUtilK {
         borderWidth: Float,
         borderColor: Int
     ) {
-        contractImageGlide(imageView.context,{
+        contractImage_ofGlide(imageView.context,{
             Glide.with(imageView).load(res)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .transform(RoundedBorderTransformation(borderWidth, borderColor))
@@ -201,14 +196,14 @@ object ImageKGlide : IUtilK {
      * 加载圆角图片
      */
     @JvmStatic
-    fun loadImageRoundedCornerGlide(
+    fun loadImageRoundedCorner_ofGlide(
         imageView: ImageView,
         res: Any?,
         placeholder: Int,
         error: Int,
         cornerRadius: Int
     ) {
-        contractImageGlide(imageView.context,{
+        contractImage_ofGlide(imageView.context,{
             Glide.with(imageView).load(res)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .transform(CenterCrop(), RoundedCorners(cornerRadius))
@@ -219,12 +214,12 @@ object ImageKGlide : IUtilK {
     }
 
     @JvmStatic
-    fun loadImageRoundedCornerGlide(
+    fun loadImageRoundedCorner_ofGlide(
         imageView: ImageView,
         res: Any?,
         cornerRadius: Int
     ) {
-        contractImageGlide(imageView.context,{
+        contractImage_ofGlide(imageView.context,{
             Glide.with(imageView).load(res)
 //            .transition(DrawableTransitionOptions.withCrossFade())
                 .transform(CenterCrop(), RoundedCorners(cornerRadius))
@@ -233,7 +228,7 @@ object ImageKGlide : IUtilK {
     }
 
     @JvmStatic
-    fun contractImageGlide(context: Context?, onContinue: I_Listener, onError: I_Listener? = null) {
+    fun contractImage_ofGlide(context: Context?, onContinue: I_Listener, onError: I_Listener? = null) {
         if (context != null /*&& context is Activity && !context.isFinishingOrDestroyed()*/) {
             try {
                 onContinue.invoke()
@@ -247,7 +242,7 @@ object ImageKGlide : IUtilK {
     }
 
     @JvmStatic
-    fun <T> contractImageGlideRes(context: Context?, onContinue: I_AListener<T>): T? {
+    fun <T> contractImageRes_ofGlide(context: Context?, onContinue: I_AListener<T>): T? {
         if (context != null /*&& context is Activity && !context.isFinishingOrDestroyed()*/) {
             try {
                 return onContinue.invoke()

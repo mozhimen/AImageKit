@@ -1,7 +1,6 @@
 package com.mozhimen.imagek.glide.blur
 
 import android.widget.ImageView
-import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.mozhimen.imagek.glide.ImageKGlide
@@ -15,7 +14,7 @@ import com.mozhimen.imagek.glide.ImageKGlide
  */
 object ImageKGlideBlur {
     @JvmStatic
-    fun loadImageGlideBlur(
+    fun loadImageBlur_ofGlide(
         imageView: ImageView,
         res: Any?,
         placeholder: Int,
@@ -23,7 +22,7 @@ object ImageKGlideBlur {
         radius: Int = BlurTransformation.BLUR_MAX_RADIUS,
         sampling: Int = BlurTransformation.BLUR_DEFAULT_DOWN_SAMPLING
     ) {
-        ImageKGlide.contractImageGlide(imageView.context, {
+        ImageKGlide.contractImage_ofGlide(imageView.context, {
             Glide.with(imageView)
                 .load(res)
                 .placeholder(placeholder)
@@ -35,14 +34,14 @@ object ImageKGlideBlur {
     }
 
     @JvmStatic
-    fun loadImageGlideBlur(
+    fun loadImageBlur_ofGlide(
         imageView: ImageView,
         res: Any?,
         placeholder: Int,
         radius: Int = BlurTransformation.BLUR_MAX_RADIUS,
         sampling: Int = BlurTransformation.BLUR_DEFAULT_DOWN_SAMPLING
     ) {
-        ImageKGlide.contractImageGlide(imageView.context, {
+        ImageKGlide.contractImage_ofGlide(imageView.context, {
             Glide.with(imageView)
                 .load(res)
                 .placeholder(placeholder)

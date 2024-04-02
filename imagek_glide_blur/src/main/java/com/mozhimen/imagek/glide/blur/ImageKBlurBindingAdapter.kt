@@ -2,7 +2,6 @@ package com.mozhimen.imagek.glide.blur
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
-import com.mozhimen.imagek.glide.blur.ImageKGlideBlur
 
 /**
  * @ClassName ImageKBlurBindingAdapter
@@ -13,8 +12,8 @@ import com.mozhimen.imagek.glide.blur.ImageKGlideBlur
  */
 object ImageKBlurBindingAdapter {
     @JvmStatic
-    @BindingAdapter(value = ["loadImageGlideBlur", "placeholder"], requireAll = true)
-    fun loadImageGlideBlur(imageView: ImageView, loadImageBlurGlide: Any, placeholder: Int) {
-        ImageKGlideBlur.loadImageGlideBlur(imageView, loadImageBlurGlide, placeholder)
+    @BindingAdapter(value = ["loadImageBlur_ofGlide", "placeholder"], requireAll = true)
+    fun loadImageBlur_ofGlide(imageView: ImageView, loadImageBlur_ofGlide: Any, placeholder: Int) {
+        ImageKGlideBlur.loadImageBlur_ofGlide(imageView, loadImageBlur_ofGlide, placeholder)
     }
 }
