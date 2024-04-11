@@ -10,7 +10,6 @@ package com.mozhimen.imagek.glide.helpers
  * kapt 'com.github.bumptech.glide:compiler:4.12.0'
  *
  * @Author Mozhimen & Kolin Zhao
- * @Date 2023/10/12 17:16
  * @Version 1.0
  */
 

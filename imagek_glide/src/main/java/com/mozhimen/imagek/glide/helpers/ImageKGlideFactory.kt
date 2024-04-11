@@ -14,7 +14,6 @@ import java.io.InputStream
  * @ClassName ImageKGlideFactory
  * @Description TODO
  * @Author Mozhimen & Kolin Zhao
- * @Date 2023/11/23 10:29
  * @Version 1.0
  */
 /** The default factory for [OkHttpUrlLoader]s.  */ // Public API.

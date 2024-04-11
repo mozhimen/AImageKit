@@ -29,7 +29,6 @@ import com.mozhimen.basick.utilk.android.view.UtilKViewWrapper
  * https://developer.android.com/guide/topics/renderscript/compute?hl=zh-cn#additional-code-samples
  * https://developer.android.com/guide/topics/renderscript/migrate?hl=zh-cn
  * @Author 大灯泡 / mozhimen / Kolin Zhao
- * @Date 2022/12/24 15:18
  * @Version 1.0
  */
 @SuppressLint("StaticFieldLeak")

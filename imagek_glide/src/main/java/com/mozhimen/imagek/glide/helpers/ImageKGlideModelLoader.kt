@@ -12,7 +12,6 @@ import java.io.InputStream
  * @ClassName ImageKFileIdLoader
  * @Description TODO
  * @Author Mozhimen & Kolin Zhao
- * @Date 2023/10/12 17:17
  * @Version 1.0
  */
 class ImageKGlideModelLoader(

@@ -15,7 +15,6 @@ import java.security.MessageDigest
  * @ClassName BlurTransformation
  * @Description TODO
  * @Author Mozhimen & Kolin Zhao
- * @Date 2023/12/7 15:40
  * @Version 1.0
  */
 class BlurTransformation @JvmOverloads constructor(

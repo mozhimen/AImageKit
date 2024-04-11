@@ -19,7 +19,6 @@ import kotlin.math.roundToInt
  * @ClassName ImageKBlurRenderScript
  * @Description TODO
  * @Author Mozhimen & Kolin Zhao
- * @Date 2023/12/7 15:51
  * @Version 1.0
  */
 object ImageKBlurRenderScript {

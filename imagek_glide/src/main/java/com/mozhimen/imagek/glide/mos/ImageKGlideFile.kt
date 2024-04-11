@@ -4,7 +4,6 @@ package com.mozhimen.imagek.glide.mos
  * @ClassName GlideImageFileId
  * @Description TODO
  * @Author Mozhimen & Kolin Zhao
- * @Date 2023/9/26 16:16
  * @Version 1.0
  */
 class ImageKGlideFile(var fileId: String) {

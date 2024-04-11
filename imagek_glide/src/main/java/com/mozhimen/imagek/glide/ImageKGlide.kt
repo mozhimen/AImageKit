@@ -24,7 +24,6 @@ import kotlinx.coroutines.suspendCancellableCoroutine
  * @ClassName ImageKGlide
  * @Description TODO
  * @Author Mozhimen / Kolin Zhao
- * @Date 2023/6/10 16:53
  * @Version 1.0
  */
 suspend fun String.isImageHorizontal(context: Context?): Boolean =
