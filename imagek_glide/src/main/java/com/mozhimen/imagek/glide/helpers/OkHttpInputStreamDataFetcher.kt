@@ -1,7 +1,6 @@
 package com.mozhimen.imagek.glide.helpers
 
 import android.text.TextUtils
-import android.util.Log
 import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.DataSource
@@ -63,9 +62,7 @@ class OkHttpInputStreamDataFetcher(client: Call.Factory, imageKGlideFile: ImageK
     }
 
     override fun onFailure(call: Call, e: IOException) {
-        if (Log.isLoggable(TAG, Log.DEBUG)) {
-            UtilKLogWrapper.d(TAG, "OkHttp failed to obtain result $e")
-        }
+        UtilKLogWrapper.d(TAG, "OkHttp failed to obtain result $e")
         _dataCallback?.onLoadFailed(e)
     }
 
