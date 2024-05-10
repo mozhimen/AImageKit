@@ -35,3 +35,4 @@ include ':SwiftKit:basick'
 include ':SwiftKit:composek'
 include ':SwiftKit:xmlk'
 
+include ':imagek_picasso'
