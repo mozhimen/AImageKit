@@ -12,6 +12,28 @@ import com.mozhimen.imagek.glide.ImageKGlide
  * @Date 2024/2/26
  * @Version 1.0
  */
+
+fun ImageView.loadImageBlur_ofGlide(
+    res: Any?,
+    placeholder: Int,
+    error: Int,
+    radius: Int = BlurTransformation.BLUR_MAX_RADIUS,
+    sampling: Int = BlurTransformation.BLUR_DEFAULT_DOWN_SAMPLING
+) {
+    ImageKGlideBlur.loadImageBlur_ofGlide(this, res, placeholder, error, radius, sampling)
+}
+
+fun ImageView.loadImageBlur_ofGlide(
+    res: Any?,
+    placeholder: Int,
+    radius: Int = BlurTransformation.BLUR_MAX_RADIUS,
+    sampling: Int = BlurTransformation.BLUR_DEFAULT_DOWN_SAMPLING
+){
+    ImageKGlideBlur.loadImageBlur_ofGlide(this,res, placeholder, radius, sampling)
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
 object ImageKGlideBlur {
     @JvmStatic
     fun loadImageBlur_ofGlide(
