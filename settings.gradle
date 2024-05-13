@@ -25,9 +25,9 @@ include ':imagek_blur'
 include ':imagek_glide'
 include ':imagek_glide_blur'
 include ':imagek_glide_compose'
-include ':imagek_coil_test'
-include ':imagek_coil'
-include ':imagek_coil_compose'
+include ':imagek_coil2_test'
+include ':imagek_coil2'
+include ':imagek_coil2_compose'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
@@ -36,3 +36,4 @@ include ':SwiftKit:composek'
 include ':SwiftKit:xmlk'
 
 include ':imagek_picasso'
+include ':imagek_coil1'
