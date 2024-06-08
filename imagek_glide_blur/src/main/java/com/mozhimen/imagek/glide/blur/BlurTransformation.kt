@@ -6,9 +6,9 @@ import android.graphics.Paint
 import androidx.annotation.IntRange
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
-import com.mozhimen.imagek.blur.ImageKBlurFast
-import com.mozhimen.imagek.blur.ImageKBlurRenderScript
 import com.mozhimen.basick.utilk.android.app.UtilKApplicationWrapper
+import com.mozhimen.blurk.BlurKFast
+import com.mozhimen.blurk.BlurKRenderScript
 import java.security.MessageDigest
 
 /**
@@ -50,12 +50,12 @@ class BlurTransformation @JvmOverloads constructor(
         paint.flags = Paint.FILTER_BITMAP_FLAG
         canvas.drawBitmap(toTransform, 0f, 0f, paint)
         bitmap = try {
-            ImageKBlurRenderScript.blurBitmapOfAndroid2(_context, bitmap, radius.toFloat())
+            BlurKRenderScript.blurBitmapOfAndroid2(_context, bitmap, radius.toFloat())
         } catch (e: Exception) {
             try {
-                ImageKBlurRenderScript.blurBitmapOfAndroid1(_context, bitmap, radius.toFloat())
+                BlurKRenderScript.blurBitmapOfAndroid1(_context, bitmap, radius.toFloat())
             } catch (e: Exception) {
-                ImageKBlurFast.blurBitmap(bitmap, radius, true)
+                BlurKFast.blurBitmap(bitmap, radius, true)
             }
         }
         return bitmap

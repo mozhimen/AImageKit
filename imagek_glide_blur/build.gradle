@@ -36,8 +36,8 @@ android {
 
 dependencies {
     implementation project(':SwiftKit:basick')
+    implementation project(':SwiftKit:blurk')
     implementation project(project.path.replace(project.name, '') +':imagek_glide')
-    implementation project(project.path.replace(project.name, '') +':imagek_blur')
 
     //test
     testImplementation 'junit:junit:4.13.2'

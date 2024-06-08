@@ -21,19 +21,20 @@ dependencyResolutionManagement {
 
 rootProject.name = "AImageKit"
 include ':app'
-include ':imagek_blur'
 include ':imagek_glide'
 include ':imagek_glide_blur'
 include ':imagek_glide_compose'
 include ':imagek_coil2_test'
 include ':imagek_coil2'
 include ':imagek_coil2_compose'
+include ':imagek_picasso'
+include ':imagek_coil1'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
 include ':SwiftKit:composek'
 include ':SwiftKit:xmlk'
+include ':SwiftKit:blurk'
 
-include ':imagek_picasso'
-include ':imagek_coil1'
+
