@@ -36,5 +36,9 @@ include ':SwiftKit:basick'
 include ':SwiftKit:composek'
 include ':SwiftKit:xmlk'
 include ':SwiftKit:blurk'
+//ALibKit_Squareup
+include ':ALibKit_Squareup'
+project(':ALibKit_Squareup').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Squareup")
+include ':ALibKit_Squareup:picasso'
 
 
