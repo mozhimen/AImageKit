@@ -1,16 +1,21 @@
 package com.mozhimen.imagek.glide
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
 import android.widget.ImageView
+import androidx.annotation.DrawableRes
 import androidx.annotation.WorkerThread
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestBuilder
+import com.bumptech.glide.load.Transformation
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.transition.Transition
 import com.mozhimen.basick.elemk.commons.I_AListener
 import com.mozhimen.basick.elemk.commons.I_Listener
@@ -18,6 +23,7 @@ import com.mozhimen.imagek.glide.commons.ICustomTarget
 import com.mozhimen.imagek.glide.impls.RoundedBorderTransformation
 import com.mozhimen.basick.utilk.commons.IUtilK
 import com.mozhimen.basick.utilk.kotlinx.coroutines.safeResume
+import com.mozhimen.imagek.glide.impls.RoundedBitmapTransformation
 import kotlinx.coroutines.suspendCancellableCoroutine
 
 /**
@@ -51,6 +57,11 @@ fun ImageView.loadImageComplex_ofGlide(
 //////////////////////////////////////////////////////////////////
 
 object ImageKGlide : IUtilK {
+    @JvmStatic
+    fun getRequestBuilder(context: Context, @DrawableRes intRes: Int, effects: Array<Transformation<Bitmap>>): RequestBuilder<Drawable> =
+        Glide.with(context)
+            .load(intRes)
+            .apply(RequestOptions().transform(*effects))
 
     @JvmStatic
     suspend fun getImageWidthAndHeight(res: Any?, context: Context?): Pair<Int, Int> = suspendCancellableCoroutine { coroutine ->
@@ -93,6 +104,26 @@ object ImageKGlide : IUtilK {
     }
 
     //////////////////////////////////////////////////////////////////////////////////
+
+    @JvmStatic
+    @WorkerThread
+    fun obj2Bitmap(obj: Any, context: Context?, width: Int, height: Int, sizeMultiplier: Float, cornerRadius: Int = 0): Bitmap? {
+        return contractImageRes_ofGlide(context) {
+            Glide.with(context!!).asBitmap().load(obj)
+                .centerCrop()
+                .thumbnail(sizeMultiplier)
+                .run {
+                    if (cornerRadius > 0) {
+                        this.transform(RoundedCorners(cornerRadius))
+                            .into(width, height)
+                            .get()
+                    } else {
+                        this.into(width, height)
+                            .get()
+                    }
+                }
+        }
+    }
 
     @JvmStatic
     @WorkerThread
@@ -181,7 +212,7 @@ object ImageKGlide : IUtilK {
         borderWidth: Float,
         borderColor: Int
     ) {
-        contractImage_ofGlide(imageView.context,{
+        contractImage_ofGlide(imageView.context, {
             Glide.with(imageView).load(res)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .transform(RoundedBorderTransformation(borderWidth, borderColor))
@@ -202,7 +233,7 @@ object ImageKGlide : IUtilK {
         error: Int,
         cornerRadius: Int
     ) {
-        contractImage_ofGlide(imageView.context,{
+        contractImage_ofGlide(imageView.context, {
             Glide.with(imageView).load(res)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .transform(CenterCrop(), RoundedCorners(cornerRadius))
@@ -218,11 +249,27 @@ object ImageKGlide : IUtilK {
         res: Any?,
         cornerRadius: Int
     ) {
-        contractImage_ofGlide(imageView.context,{
+        contractImage_ofGlide(imageView.context, {
             Glide.with(imageView).load(res)
 //            .transition(DrawableTransitionOptions.withCrossFade())
                 .transform(CenterCrop(), RoundedCorners(cornerRadius))
                 .into(imageView)
+        })
+    }
+
+    @SuppressLint("CheckResult")
+    @JvmStatic
+    fun loadImageRoundedCorner_ofGlide(
+        imageView: ImageView,
+        res: Any?,
+        placeholder: Int,
+        cornerRadius: Float
+    ) {
+        contractImage_ofGlide(imageView.context, {
+            Glide.with(imageView).load(res).apply(RequestOptions().apply {
+                transform(RoundedBitmapTransformation(cornerRadius))//设置圆角大小
+                error(placeholder).placeholder(placeholder)//错误图、占位图
+            }).into(imageView)
         })
     }
 
