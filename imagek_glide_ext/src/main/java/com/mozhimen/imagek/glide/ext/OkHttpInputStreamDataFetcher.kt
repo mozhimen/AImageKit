@@ -1,4 +1,4 @@
-package com.mozhimen.imagek.glide.helpers
+package com.mozhimen.imagek.glide.ext
 
 import android.text.TextUtils
 import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
@@ -9,7 +9,6 @@ import com.bumptech.glide.load.data.DataFetcher
 import com.bumptech.glide.util.ContentLengthInputStream
 import com.bumptech.glide.util.Preconditions
 import com.mozhimen.basick.elemk.commons.IA_AListener
-import com.mozhimen.imagek.glide.mos.ImageKGlideFile
 import com.mozhimen.basick.utilk.commons.IUtilK
 import okhttp3.Call
 import okhttp3.Callback

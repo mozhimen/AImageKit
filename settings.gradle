@@ -29,6 +29,7 @@ include ':imagek_coil2'
 include ':imagek_coil2_compose'
 include ':imagek_picasso'
 include ':imagek_coil1'
+include ':imagek_glide_ext'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
@@ -40,5 +41,6 @@ include ':SwiftKit:blurk'
 include ':ALibKit_Squareup'
 project(':ALibKit_Squareup').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Squareup")
 include ':ALibKit_Squareup:picasso'
+include ':ALibKit_Squareup:okhttp3'
 
 

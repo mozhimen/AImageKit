@@ -1,4 +1,4 @@
-package com.mozhimen.imagek.glide.helpers
+package com.mozhimen.imagek.glide.ext
 
 /**
  * @ClassName ImageKGlideModule

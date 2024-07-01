@@ -1,11 +1,10 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
 }
 
 android {
-    namespace 'com.mozhimen.imagek.glide'
+    namespace 'com.mozhimen.imagek.glide.ext'
     compileSdk 34
 
     defaultConfig {
@@ -29,20 +28,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
-        dataBinding true
-    }
 }
 
 dependencies {
     implementation project(':SwiftKit:basick')
-
-    //glide
-    api 'com.github.bumptech.glide:glide:4.16.0'//图片加载库
-    api "com.github.bumptech.glide:okhttp3-integration:4.16.0"
+    implementation project(project.path.replace(project.name, '') + ':imagek_glide')
+    implementation project(':ALibKit_Squareup:okhttp3')
 //    kapt 'com.github.bumptech.glide:compiler:4.16.0'
 
-    //test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

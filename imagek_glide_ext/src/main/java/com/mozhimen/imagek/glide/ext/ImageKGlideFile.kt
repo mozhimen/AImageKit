@@ -1,4 +1,4 @@
-package com.mozhimen.imagek.glide.mos
+package com.mozhimen.imagek.glide.ext
 
 /**
  * @ClassName GlideImageFileId
