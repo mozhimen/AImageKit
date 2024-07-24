@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable
 import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
+import androidx.annotation.RequiresPermission
 import androidx.annotation.WorkerThread
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
@@ -19,6 +20,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.transition.Transition
 import com.mozhimen.basick.elemk.commons.I_AListener
 import com.mozhimen.basick.elemk.commons.I_Listener
+import com.mozhimen.basick.lintk.optins.permission.OPermission_INTERNET
+import com.mozhimen.basick.manifestk.cons.CPermission
 import com.mozhimen.imagek.glide.commons.ICustomTarget
 import com.mozhimen.imagek.glide.impls.RoundedBorderTransformation
 import com.mozhimen.basick.utilk.commons.IUtilK
@@ -32,6 +35,20 @@ import kotlinx.coroutines.suspendCancellableCoroutine
  * @Author Mozhimen / Kolin Zhao
  * @Version 1.0
  */
+@RequiresPermission(CPermission.INTERNET)
+@OPermission_INTERNET
+@WorkerThread
+fun String.strUrl2bitmap_ofGlide(context: Context?, placeholder: Int, width: Int, height: Int): Bitmap? =
+    ImageKGlide.strUrl2bitmap_ofGlide(this, context, placeholder, width, height)
+
+@RequiresPermission(CPermission.INTERNET)
+@OPermission_INTERNET
+@WorkerThread
+fun String.strUrl2bitmap_ofGlide(context: Context?, placeholder: Int, width: Int, height: Int, cornerRadius: Int): Bitmap? =
+    ImageKGlide.strUrl2bitmap_ofGlide(this, context, placeholder, width, height, cornerRadius)
+
+//////////////////////////////////////////////////////////////////
+
 suspend fun String.isImageHorizontal(context: Context?): Boolean =
     ImageKGlide.isImageHorizontal(this, context)
 
@@ -48,9 +65,7 @@ fun ImageView.loadImageRoundedCorner_ofGlide(res: Any, radius: Int) {
     ImageKGlide.loadImageRoundedCorner_ofGlide(this, res, radius)
 }
 
-fun ImageView.loadImageComplex_ofGlide(
-    res: Any, placeholder: Int, error: Int
-) {
+fun ImageView.loadImageComplex_ofGlide(res: Any, placeholder: Int, error: Int) {
     ImageKGlide.loadImageComplex_ofGlide(this, res, placeholder, error)
 }
 
@@ -149,6 +164,32 @@ object ImageKGlide : IUtilK {
                 .error(placeholder)
                 .into(width, height)
                 .get()
+        }
+    }
+
+    @JvmStatic
+    @RequiresPermission(CPermission.INTERNET)
+    @OPermission_INTERNET
+    @WorkerThread
+    fun strUrl2bitmap_ofGlide(strUrl: String, context: Context?, placeholder: Int, width: Int, height: Int): Bitmap? =
+        ImageKGlide.obj2Bitmap(strUrl, context, placeholder, width, height)
+
+    @JvmStatic
+    @RequiresPermission(CPermission.INTERNET)
+    @OPermission_INTERNET
+    @WorkerThread
+    fun strUrl2bitmap_ofGlide(strUrl: String, context: Context?, placeholder: Int, width: Int, height: Int, cornerRadius: Int): Bitmap? =
+        ImageKGlide.obj2Bitmap(strUrl, context, placeholder, width, height, cornerRadius)
+
+
+    @JvmStatic
+    @WorkerThread
+    fun clearCache(context: Context) {
+        try {
+            // Glide: You must call this method on a background thread
+            Glide.get(context).clearDiskCache()
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 
