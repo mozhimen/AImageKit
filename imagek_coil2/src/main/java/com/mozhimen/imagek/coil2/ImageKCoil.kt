@@ -7,12 +7,13 @@ import androidx.annotation.Px
 import coil.load
 import coil.transform.CircleCropTransformation
 import coil.transform.RoundedCornersTransformation
+import com.mozhimen.basick.utilk.android.util.dp2px
 import com.mozhimen.imagek.coil2.cons.CCoilBlurCons
 import com.mozhimen.imagek.coil2.temps.BlurTransformation
 import com.mozhimen.imagek.coil2.temps.ColorFilterTransformation
 import com.mozhimen.imagek.coil2.temps.CropTransformation
 import com.mozhimen.imagek.coil2.temps.GrayscaleTransformation
-import com.mozhimen.basick.utilk.android.util.dp2px
+import com.mozhimen.imagek.coil2.temps.RotateTransformation
 
 /**
  * @ClassName UtilKImageLoader
@@ -23,6 +24,10 @@ import com.mozhimen.basick.utilk.android.util.dp2px
  */
 fun ImageView.loadImage_ofCoil(res: Any) {
     ImageKCoil.loadImage_ofCoil(this, res)
+}
+
+fun ImageView.loadImageRotate_ofCoil(res: Any,@FloatRange(from = -360.0, to = 360.0) rotate: Float){
+    ImageKCoil.loadImageRotate_ofCoil(this,res,rotate)
 }
 
 fun ImageView.loadImageComplex_ofCoil(
@@ -78,6 +83,14 @@ object ImageKCoil {
     fun loadImage_ofCoil(imageView: ImageView, res: Any) {
         imageView.load(res)
     }
+
+    @JvmStatic
+    fun loadImageRotate_ofCoil(imageView: ImageView, res: Any,@FloatRange(from = -360.0, to = 360.0)rotate:Float) {
+        imageView.load(res){
+            transformations(RotateTransformation(rotate))
+        }
+    }
+
 
     @JvmStatic
     fun loadImageComplex_ofCoil(

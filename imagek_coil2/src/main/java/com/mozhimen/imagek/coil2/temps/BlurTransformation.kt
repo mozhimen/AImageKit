@@ -34,7 +34,6 @@ class BlurTransformation @JvmOverloads constructor(
     private val radius: Float = CCoilBlurCons.RADIUS,
     private val sampling: Float = CCoilBlurCons.SAMPLING
 ) : Transformation, ITransformation {
-    private val TAG = "BlurTransformation>>>>>"
 
     init {
         require(radius in 0.0..25.0) { "$TAG radius must be in [0, 25]" }
