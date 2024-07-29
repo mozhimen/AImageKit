@@ -40,11 +40,16 @@ object ImageKCoilBindingAdapter {
             !loadImageWhen2_ofCoil && !loadImageWhen2_ofCoil_condition2 -> ImageKCoil.loadImage_ofCoil(imageView, loadImageWhen2_ofCoil_status4)
         }
     }
-
     @JvmStatic
     @BindingAdapter("loadImage_ofCoil")
     fun loadImage_ofCoil(imageView: ImageView, loadImage_ofCoil: Any) {
         ImageKCoil.loadImage_ofCoil(imageView, loadImage_ofCoil)
+    }
+
+    @JvmStatic
+    @BindingAdapter(value = ["loadImageRotate_ofCoil","loadImageRotate_ofCoil_rotate"], requireAll = true)
+    fun loadImageRotate_ofCoil(imageView: ImageView, loadImageRotate_ofCoil: Any,loadImageRotate_ofCoil_rotate:Float) {
+        ImageKCoil.loadImageRotate_ofCoil(imageView, loadImageRotate_ofCoil,loadImageRotate_ofCoil_rotate)
     }
 
     @JvmStatic

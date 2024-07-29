@@ -1,6 +1,10 @@
 package com.mozhimen.imagek.coil2.temps
 
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import androidx.annotation.ColorInt
 import androidx.core.graphics.createBitmap
 import coil.size.Size
@@ -15,10 +19,10 @@ import com.mozhimen.imagek.coil2.commons.ITransformation
  * @Version 1.0
  */
 class ColorFilterTransformation(
-    @ColorInt private val color: Int
+    @ColorInt private val _color: Int
 ) : Transformation, ITransformation {
 
-    override val cacheKey: String = "${ColorFilterTransformation::class.java.name}-$color"
+    override val cacheKey: String = "${this::class.java.name}-$_color"
 
     override suspend fun transform(input: Bitmap, size: Size): Bitmap {
         val output = createBitmap(input.width, input.height, input.safeConfig)
@@ -26,7 +30,7 @@ class ColorFilterTransformation(
         val canvas = Canvas(output)
         val paint = Paint()
         paint.isAntiAlias = true
-        paint.colorFilter = PorterDuffColorFilter(color, PorterDuff.Mode.SRC_ATOP)
+        paint.colorFilter = PorterDuffColorFilter(_color, PorterDuff.Mode.SRC_ATOP)
         canvas.drawBitmap(input, 0f, 0f, paint)
 
         return output

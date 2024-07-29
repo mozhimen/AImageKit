@@ -17,7 +17,7 @@ import java.lang.Float.max
  * @Version 1.0
  */
 class CropTransformation(
-    private val cropType: ECropType = ECropType.CENTER
+    private val _cropType: ECropType = ECropType.CENTER
 ) : Transformation, ITransformation {
 
     enum class ECropType {
@@ -26,7 +26,7 @@ class CropTransformation(
         BOTTOM
     }
 
-    override val cacheKey: String = "${CropTransformation::class.java.name}-$cropType"
+    override val cacheKey: String = "${javaClass.name}-$_cropType"
 
     override suspend fun transform(input: Bitmap, size: Size): Bitmap {
         val width = input.width
@@ -53,7 +53,7 @@ class CropTransformation(
     }
 
     private fun getTop(height: Float, scaledHeight: Float): Float {
-        return when (cropType) {
+        return when (_cropType) {
             ECropType.TOP -> 0f
             ECropType.CENTER -> (height - scaledHeight) / 2
             ECropType.BOTTOM -> height - scaledHeight

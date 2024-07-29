@@ -19,7 +19,7 @@ import com.mozhimen.imagek.coil2.commons.ITransformation
  */
 class GrayscaleTransformation : Transformation, ITransformation {
 
-    override val cacheKey: String = GrayscaleTransformation::class.java.name
+    override val cacheKey: String = this::class.java.name
 
     override suspend fun transform(input: Bitmap, size: Size): Bitmap {
         val paint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)
