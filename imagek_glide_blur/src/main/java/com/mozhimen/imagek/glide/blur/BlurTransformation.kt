@@ -6,7 +6,7 @@ import android.graphics.Paint
 import androidx.annotation.IntRange
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
-import com.mozhimen.basick.utilk.android.app.UtilKApplicationWrapper
+import com.mozhimen.kotlin.utilk.android.app.UtilKApplicationWrapper
 import com.mozhimen.blurk.BlurKFast
 import com.mozhimen.blurk.BlurKRenderScript
 import java.security.MessageDigest

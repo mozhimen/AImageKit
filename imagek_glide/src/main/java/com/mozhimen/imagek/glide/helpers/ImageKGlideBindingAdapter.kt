@@ -2,7 +2,7 @@ package com.mozhimen.imagek.glide.helpers
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
-import com.mozhimen.basick.utilk.android.util.dp2px
+import com.mozhimen.kotlin.utilk.android.util.dp2px
 import com.mozhimen.imagek.glide.ImageKGlide
 
 /**

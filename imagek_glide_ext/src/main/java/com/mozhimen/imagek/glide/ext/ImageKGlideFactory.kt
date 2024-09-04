@@ -4,7 +4,7 @@ import com.bumptech.glide.integration.okhttp3.OkHttpUrlLoader
 import com.bumptech.glide.load.model.ModelLoader
 import com.bumptech.glide.load.model.ModelLoaderFactory
 import com.bumptech.glide.load.model.MultiModelLoaderFactory
-import com.mozhimen.basick.elemk.commons.IA_AListener
+import com.mozhimen.kotlin.elemk.commons.IA_AListener
 import okhttp3.Call
 import okhttp3.OkHttpClient
 import java.io.InputStream

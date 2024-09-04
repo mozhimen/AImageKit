@@ -7,9 +7,9 @@ import androidx.annotation.RequiresPermission
 import coil.ImageLoader
 import coil.imageLoader
 import coil.request.ImageRequest
-import com.mozhimen.basick.lintk.optins.permission.OPermission_INTERNET
-import com.mozhimen.basick.manifestk.cons.CPermission
-import com.mozhimen.basick.utilk.bases.BaseUtilK
+import com.mozhimen.kotlin.lintk.optins.permission.OPermission_INTERNET
+import com.mozhimen.kotlin.elemk.android.cons.CPermission
+import com.mozhimen.kotlin.utilk.bases.BaseUtilK
 
 /**
  * @ClassName ImageKCoilUtil

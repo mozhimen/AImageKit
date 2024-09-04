@@ -7,7 +7,7 @@ import androidx.annotation.Px
 import coil.load
 import coil.transform.CircleCropTransformation
 import coil.transform.RoundedCornersTransformation
-import com.mozhimen.basick.utilk.android.util.dp2px
+import com.mozhimen.kotlin.utilk.android.util.dp2px
 import com.mozhimen.imagek.coil2.cons.CCoilBlurCons
 import com.mozhimen.imagek.coil2.temps.BlurTransformation
 import com.mozhimen.imagek.coil2.temps.ColorFilterTransformation

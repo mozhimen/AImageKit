@@ -1,15 +1,15 @@
 package com.mozhimen.imagek.glide.ext
 
 import android.text.TextUtils
-import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
+import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.HttpException
 import com.bumptech.glide.load.data.DataFetcher
 import com.bumptech.glide.util.ContentLengthInputStream
 import com.bumptech.glide.util.Preconditions
-import com.mozhimen.basick.elemk.commons.IA_AListener
-import com.mozhimen.basick.utilk.commons.IUtilK
+import com.mozhimen.kotlin.elemk.commons.IA_AListener
+import com.mozhimen.kotlin.utilk.commons.IUtilK
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Request

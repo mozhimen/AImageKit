@@ -4,8 +4,8 @@ import android.graphics.Bitmap
 import androidx.annotation.FloatRange
 import coil.size.Size
 import coil.transform.Transformation
-import com.mozhimen.basick.utilk.android.graphics.applyBitmapAnyRotate
-import com.mozhimen.basick.utilk.commons.IUtilK
+import com.mozhimen.kotlin.utilk.android.graphics.applyBitmapAnyRotate
+import com.mozhimen.kotlin.utilk.commons.IUtilK
 import kotlin.math.abs
 
 /**

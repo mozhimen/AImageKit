@@ -1,7 +1,7 @@
 package com.mozhimen.imagek.coil2.commons
 
 import android.graphics.Bitmap
-import com.mozhimen.basick.utilk.commons.IUtilK
+import com.mozhimen.kotlin.utilk.commons.IUtilK
 
 /**
  * @ClassName ITransformation

@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
+import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.annotation.RequiresPermission
@@ -18,15 +18,15 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.transition.Transition
-import com.mozhimen.basick.elemk.commons.I_AListener
-import com.mozhimen.basick.elemk.commons.I_Listener
-import com.mozhimen.basick.lintk.optins.permission.OPermission_INTERNET
-import com.mozhimen.basick.manifestk.cons.CPermission
+import com.mozhimen.kotlin.elemk.commons.I_AListener
+import com.mozhimen.kotlin.elemk.commons.I_Listener
+import com.mozhimen.kotlin.lintk.optins.permission.OPermission_INTERNET
 import com.mozhimen.imagek.glide.commons.ICustomTarget
 import com.mozhimen.imagek.glide.impls.RoundedBorderTransformation
-import com.mozhimen.basick.utilk.commons.IUtilK
-import com.mozhimen.basick.utilk.kotlinx.coroutines.safeResume
+import com.mozhimen.kotlin.utilk.commons.IUtilK
+import com.mozhimen.kotlin.utilk.kotlinx.coroutines.safeResume
 import com.mozhimen.imagek.glide.impls.RoundedBitmapTransformation
+import com.mozhimen.kotlin.elemk.android.cons.CPermission
 import kotlinx.coroutines.suspendCancellableCoroutine
 
 /**
