@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalGlideComposeApi::class)
+
 package com.mozhimen.imagek.glide.compose
 
 import android.graphics.drawable.Drawable
@@ -14,7 +16,6 @@ import com.bumptech.glide.integration.compose.RequestBuilderTransform
 import com.bumptech.glide.integration.compose.RequestState
 import com.bumptech.glide.integration.compose.Transition
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun ImageKGlide(
     model: Any?,

@@ -27,14 +27,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions.kotlinCompilerExtensionVersion = "1.5.10"
 }
 
 dependencies {
-    implementation project(':SwiftKit:basick')
-    implementation project(':SwiftKit:composek')
-    implementation project(project.path.replace(project.name, '') +':imagek_glide')
+//    implementation project(':SwiftKit:composek')
+//    implementation project(project.path.replace(project.name, '') +':imagek_glide')
     api 'com.github.bumptech.glide:compose:1.0.0-beta01'//图片加载库
-
 //    api 'com.google.accompanist:accompanist-glide:0.15.0'
     
     testImplementation 'junit:junit:4.13.2'
