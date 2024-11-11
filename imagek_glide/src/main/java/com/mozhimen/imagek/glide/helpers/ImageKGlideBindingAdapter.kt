@@ -30,6 +30,25 @@ object ImageKGlideBindingAdapter {
     }
 
     @JvmStatic
+    @BindingAdapter(value = ["loadImageWhen2_ofGlide", "loadImageWhen2_ofGlide_condition2", "loadImageWhen2_ofGlide_status1", "loadImageWhen2_ofGlide_status2", "loadImageWhen2_ofGlide_status3", "loadImageWhen2_ofGlide_status4"], requireAll = true)
+    fun loadImageWhen2_ofGlide(
+        imageView: ImageView,
+        loadImageWhen2_ofGlide: Boolean,
+        loadImageWhen2_ofGlide_condition2: Boolean,
+        loadImageWhen2_ofGlide_status1: Any,
+        loadImageWhen2_ofGlide_status2: Any,
+        loadImageWhen2_ofGlide_status3: Any,
+        loadImageWhen2_ofGlide_status4: Any
+    ) {
+        when {
+            loadImageWhen2_ofGlide && loadImageWhen2_ofGlide_condition2 -> ImageKGlide.loadImage_ofGlide(imageView, loadImageWhen2_ofGlide_status1)
+            loadImageWhen2_ofGlide && !loadImageWhen2_ofGlide_condition2 -> ImageKGlide.loadImage_ofGlide(imageView, loadImageWhen2_ofGlide_status2)
+            !loadImageWhen2_ofGlide && loadImageWhen2_ofGlide_condition2 -> ImageKGlide.loadImage_ofGlide(imageView, loadImageWhen2_ofGlide_status3)
+            !loadImageWhen2_ofGlide && !loadImageWhen2_ofGlide_condition2 -> ImageKGlide.loadImage_ofGlide(imageView, loadImageWhen2_ofGlide_status4)
+        }
+    }
+
+    @JvmStatic
     @BindingAdapter(value = ["loadImageRoundedCorner_ofGlide", "roundedCornerRadius"], requireAll = true)
     fun loadImageRoundedCorner_ofGlide(imageView: ImageView, loadImageRoundedCorner_ofGlide: Any, roundedCornerRadius: Int) {
         ImageKGlide.loadImageRoundedCorner_ofGlide(imageView, loadImageRoundedCorner_ofGlide, roundedCornerRadius.dp2px().toInt())
