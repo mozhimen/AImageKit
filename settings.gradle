@@ -30,13 +30,13 @@ include ':imagek_coil2_compose'
 include ':imagek_picasso'
 include ':imagek_coil1'
 include ':imagek_glide_ext'
-//SwiftKit
-include ':SwiftKit'
-project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
-include ':SwiftKit:basick'
-include ':SwiftKit:composek'
-include ':SwiftKit:xmlk'
-include ':SwiftKit:blurk'
+//ASwiftKit
+include ':ASwiftKit'
+project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
+include ':ASwiftKit:basick'
+include ':ASwiftKit:composek'
+include ':ASwiftKit:xmlk'
+include ':ASwiftKit:blurk'
 //ALibKit_Squareup
 include ':ALibKit_Squareup'
 project(':ALibKit_Squareup').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Squareup")
