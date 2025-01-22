@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/BottomBar_Height"
+    android:background="?attr/BottomBar_Background"
+    android:elevation="2dp"
+    tools:layout_height="45dp">
+
+    <TextView
+        android:id="@+id/button_preview"
+        style="@style/singleLineText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?selectableItemBackground"
+        android:gravity="start"
+        android:padding="16dp"
+        android:text="?attr/BottomBarPreview_Text"
+        android:textColor="?attr/BottomBarPreview_TextColor"
+        android:textSize="?attr/BottomBarPreview_TextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/original_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/original_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:showIn="@layout/activity_matisse">
+
+        <com.mozhimen.imagek.matisse.widgets.CheckRadioView
+            android:id="@+id/original"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/matisse_ic_preview_radio_off" />
+
+        <TextView
+            style="@style/singleLineText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:enabled="true"
+            android:padding="4dp"
+            android:text="?attr/BottomBarOriginal_Text"
+            android:textColor="?attr/BottomBarOriginal_TextColor"
+            android:textSize="?attr/BottomBarOriginal_TextSize" />
+
+        <TextView
+            android:id="@+id/tv_size"
+            style="@style/singleLineText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cok_tran_38_61f"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:text="ff"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/button_apply"
+        style="@style/singleLineText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foreground="?selectableItemBackground"
+        android:gravity="end"
+        android:padding="16dp"
+        android:text="?attr/BottomBarAlbum_Text"
+        android:textColor="?attr/BottomBarAlbum_TextColor"
+        android:textSize="?attr/BottomBarAlbum_TextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/original_layout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

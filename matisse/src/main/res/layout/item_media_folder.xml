@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:foreground="?selectableItemBackground"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/iv_bucket_cover"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/matisse_bg_gallery_bucket"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_bucket_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15dp"
+        android:ellipsize="middle"
+        android:lineSpacingExtra="4dp"
+        android:singleLine="true"
+        android:textColor="?attr/ItemAlbum_TextColor"
+        android:textSize="?attr/ItemAlbum_TextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rb_selected"
+        app:layout_constraintStart_toEndOf="@+id/iv_bucket_cover"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mozhimen.imagek.matisse.widgets.CheckRadioView
+        android:id="@+id/rb_selected"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

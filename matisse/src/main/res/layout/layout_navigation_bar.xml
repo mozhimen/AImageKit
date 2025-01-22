@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/Navigation_Height"
+    android:background="?attr/Navigation_Background"
+    android:elevation="2dp"
+    tools:background="@color/color_black"
+    tools:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/button_back"
+        style="@style/singleLineText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:drawableStart="?attr/Navigation_ResBack"
+        android:drawablePadding="5dp"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="?attr/Navigation_TextBack"
+        android:textColor="?attr/Navigation_TextColorBack"
+        android:textSize="?attr/Navigation_TextSizeBack"
+        android:textStyle="?attr/Navigation_TextStyleBack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/singleLineText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center"
+        android:text="?attr/Navigation_TextTitle"
+        android:textColor="?attr/Navigation_TextColorTitle"
+        android:textSize="?attr/Navigation_TextSizeTitle"
+        android:textStyle="?attr/Navigation_TextStyleTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/button_back"
+        app:layout_constraintRight_toLeftOf="@id/button_complete"
+        tools:text="11111111111111111111111111111111111"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/button_complete"
+        style="@style/singleLineText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:foreground="?selectableItemBackground"
+        android:padding="16dp"
+        android:text="?attr/Navigation_TextSure"
+        android:textColor="?attr/Navigation_TextColorSure"
+        android:textSize="?attr/Navigation_TextSizeSure"
+        android:textStyle="?attr/Navigation_TextStyleSure"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

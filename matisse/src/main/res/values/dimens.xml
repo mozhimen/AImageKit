@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_media_grid">48dp</dimen>
+    <dimen name="spacing_media_grid">4dp</dimen>
+
+    <dimen name="height_navigation">48dp</dimen>
+    <dimen name="height_bottom">48dp</dimen>
+
+    <dimen name="size_text_back">15sp</dimen>
+    <dimen name="size_text_title">15sp</dimen>
+    <dimen name="size_text_sure">15sp</dimen>
+    <dimen name="size_text_preview">15sp</dimen>
+    <dimen name="size_text_album">15sp</dimen>
+    <dimen name="size_text_original">15sp</dimen>
+    <dimen name="size_text_empty">17sp</dimen>
+    <dimen name="size_item_text_photo">14sp</dimen>
+    <dimen name="size_item_text_album">16sp</dimen>
+
+</resources>

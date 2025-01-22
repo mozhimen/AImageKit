@@ -21,15 +21,38 @@ dependencyResolutionManagement {
 
 rootProject.name = "AImageKit"
 include ':app'
-include ':imagek_glide'
-include ':imagek_glide_blur'
-include ':imagek_glide_compose'
-include ':imagek_coil2_test'
-include ':imagek_coil2'
-include ':imagek_coil2_compose'
-include ':imagek_picasso'
-include ':imagek_coil1'
-include ':imagek_glide_ext'
+include ':coil1'
+include ':coil2'
+include ':coil2:compose'
+include ':coil2:test'
+include ':glide:glide'
+include ':glide:blur'
+include ':glide:compose'
+include ':glide:ext'
+include ':picasso'
+include ':matisse'
+include ':matisse:exam'
+include ':ucrop'
+include ':imagezoom'
+//ALibKit_Google
+include ':ALibKit_Google'
+project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
+include ':ALibKit_Google:material'
+//ALibKit_Jetpack
+include ':ALibKit_Jetpack'
+project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
+include ':ALibKit_Jetpack:core'
+include ':ALibKit_Jetpack:annotation'
+//ALibKit_Jetbrains
+include ':ALibKit_Jetbrains'
+project(':ALibKit_Jetbrains').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetbrains")
+include ':ALibKit_Jetbrains:kotlin_stdlib'
+include ':ALibKit_Jetbrains:kotlinx_coroutines'
+//ALibKit_Squareup
+include ':ALibKit_Squareup'
+project(':ALibKit_Squareup').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Squareup")
+include ':ALibKit_Squareup:picasso'
+include ':ALibKit_Squareup:okhttp3'
 //ASwiftKit
 include ':ASwiftKit'
 project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
@@ -37,15 +60,22 @@ include ':ASwiftKit:basick'
 include ':ASwiftKit:composek'
 include ':ASwiftKit:xmlk'
 include ':ASwiftKit:blurk'
-//ALibKit_Squareup
-include ':ALibKit_Squareup'
-project(':ALibKit_Squareup').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Squareup")
-include ':ALibKit_Squareup:picasso'
-include ':ALibKit_Squareup:okhttp3'
 //KUtilKit
 include ':KUtilKit'
 project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
-include ':KUtilKit:utilk_android'
-include ':KUtilKit:utilk_kotlin'
-
+include ':KUtilKit:android'
+include ':KUtilKit:kotlin'
+//AXmlKit
+include ':AXmlKit'
+project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
+include ':AXmlKit:pagerk'
+//AManifestKit_XXPermission
+include(':AManifestKit_XXPermissions')
+project(':AManifestKit_XXPermissions').projectDir = new File("D:\\WorkSpace\\GitHub\\AManifestKit_XXPermissions")
+include(':AManifestKit_XXPermissions:manifestK_xxpermissions')
+include(':AManifestKit_XXPermissions:library')
+//AAdaptKit
+include(':AAdaptKit')
+project(':AAdaptKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AAdaptKit")
+include(':AAdaptKit:systembar')
 

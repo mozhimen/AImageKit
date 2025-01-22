@@ -1,15 +1,15 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
 }
 
 android {
-    namespace 'com.mozhimen.imagek.test'
+    namespace 'com.mozhimen.imagek.coil2.test'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.mozhimen.imagek.test"
+        applicationId "com.mozhimen.imagek.coil.test"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -31,15 +31,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
-        viewBinding true
+    buildFeatures {
+        dataBinding true
     }
 }
 
 dependencies {
-    implementation project(':glide')
+
     implementation project(':ASwiftKit:basick')
-    //test
+    implementation project(':ASwiftKit:xmlk')
+    implementation project(':coil2')
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

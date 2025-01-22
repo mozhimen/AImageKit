@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <!--NavigationBar-->
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <!--顶部导航条高度-->
+    <attr name="Navigation_Height" format="dimension" />
+    <!--顶部导航条背景色-->
+    <attr name="Navigation_Background" format="reference|color" />
+
+    <!--顶部导航条返回按钮资源图-->
+    <attr name="Navigation_ResBack" format="reference" />
+    <!--返回按钮文字 当无文字是可设置为空字符串 如下-->
+    <attr name="Navigation_TextBack" format="reference" />
+    <!--返回按钮颜色-->
+    <attr name="Navigation_TextColorBack" format="reference|color" />
+    <!--返回按钮文字大小-->
+    <attr name="Navigation_TextSizeBack" format="dimension" />
+    <attr name="Navigation_TextStyleBack">
+        <flag name="normal" value="0" />
+        <flag name="bold" value="1" />
+        <flag name="italic" value="2" />
+    </attr>
+
+    <attr name="Navigation_TextTitle" format="reference" />
+    <attr name="Navigation_TextColorTitle" format="reference|color" />
+    <attr name="Navigation_TextSizeTitle" format="dimension" />
+    <attr name="Navigation_TextStyleTitle">
+        <flag name="normal" value="0" />
+        <flag name="bold" value="1" />
+        <flag name="italic" value="2" />
+    </attr>
+
+    <attr name="Navigation_TextSure" format="reference" />
+    <!--确定按钮颜色-->
+    <attr name="Navigation_TextColorSure" format="reference|color" />
+    <!--确认按钮文字大小-->
+    <attr name="Navigation_TextSizeSure" format="dimension" />
+    <attr name="Navigation_TextStyleSure">
+        <flag name="normal" value="0" />
+        <flag name="bold" value="1" />
+        <flag name="italic" value="2" />
+    </attr>
+
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <!--Preview-->
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <!--图片预览界面背景色-->
+    <attr name="Preview_Background" format="reference|color" />
+    <attr name="Preview_TextBack" format="reference" />
+    <attr name="Preview_TextConfirm" format="reference" />
+
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <!--BottomBar-->
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <!--底部工具栏高度-->
+    <attr name="BottomBar_Height" format="dimension" />
+    <!--底部工具栏背景色-->
+    <attr name="BottomBar_Background" format="reference|color" />
+    <attr name="BottomBarPreview_Text" format="reference" />
+    <!--预览按钮颜色-->
+    <attr name="BottomBarPreview_TextColor" format="reference|color" />
+    <!--预览按钮文字大小-->
+    <attr name="BottomBarPreview_TextSize" format="dimension" />
+    <attr name="BottomBarAlbum_Text" format="reference" />
+    <!--查看全部相册文件夹按钮颜色-->
+    <attr name="BottomBarAlbum_TextColor" format="reference|color" />
+    <!--查看全部相册按钮文字大小-->
+    <attr name="BottomBarAlbum_TextSize" format="dimension" />
+    <attr name="BottomBarOriginal_Text" format="reference" />
+    <!--原图选择控件文字颜色-->
+    <attr name="BottomBarOriginal_TextColor" format="reference|color" />
+    <!--原图按钮文字大小-->
+    <attr name="BottomBarOriginal_TextSize" format="dimension" />
+
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <!--EmptyBar-->
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <attr name="EmptyBar_Text" format="reference" />
+    <!--空状态文字颜色-->
+    <attr name="EmptyBar_TextColor" format="reference|color" />
+    <!--空状态文字大小-->
+    <attr name="EmptyBar_TextSize" format="dimension" />
+    <!--空状态资源图-->
+    <attr name="EmptyBar_Res" format="reference" />
+
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <!--Item-->
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <attr name="ItemPhoto_Text" format="reference" />
+    <!--列表中可拍照状态下相机item文字颜色-->
+    <attr name="ItemPhoto_TextColor" format="reference|color" />
+    <!--列表中可拍照状态下相机item文字大小-->
+    <attr name="ItemPhoto_TextSize" format="dimension" />
+
+    <!--相册文件夹内部列表item颜色-->
+    <attr name="ItemAlbum_TextColor" format="reference|color" />
+    <!--查看全部相册内item文字大小-->
+    <attr name="ItemAlbum_TextSize" format="dimension" />
+
+    <!--选中控件背景色-->
+    <attr name="ItemCheckView_BackgroundColor" format="reference|color" />
+    <!--选中控件圆环边框颜色-->
+    <attr name="ItemCheckView_BorderColor" format="reference|color" />
+    <attr name="ItemCheckView_NumColor" format="reference|color" />
+    <!--原图radio控件颜色-->
+    <attr name="ItemCheckRadioView_Theme" format="reference|color" />
+
+    <attr name="ItemImage_ResPlaceholder" format="reference|color" />
+
+    <!--//////////////////////////////////////////////////////////////////////-->
+    <!--Page-->
+    <!--//////////////////////////////////////////////////////////////////////-->
+
+    <attr name="Page_Background" format="reference|color" />
+</resources>

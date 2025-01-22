@@ -1,16 +1,16 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
 }
 
 android {
-    namespace 'com.mozhimen.imagek.test'
+    namespace 'com.mozhimen.imagek.matisse.test'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.mozhimen.imagek.test"
-        minSdk 21
+        applicationId "com.mozhimen.imagek.matisse.test"
+        minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -31,15 +31,26 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
-        viewBinding true
+    buildFeatures {
+        dataBinding true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
 dependencies {
-    implementation project(':glide')
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation project(':matisse')
+    implementation project(':AManifestKit_XXPermissions:manifestK_xxpermissions')
     implementation project(':ASwiftKit:basick')
-    //test
+    implementation project(':ASwiftKit:xmlk')
+    implementation project(':AAdaptKit:systembar')
+    implementation project(':glide')
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
