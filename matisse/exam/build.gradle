@@ -41,11 +41,8 @@ android {
 }
 
 dependencies {
-
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-
     implementation project(':matisse')
-    implementation project(':AManifestKit_XXPermissions:manifestK_xxpermissions')
+    implementation project(':APermissionKit_XXPermissions:permissionk_xxpermissions')
     implementation project(':ASwiftKit:basick')
     implementation project(':ASwiftKit:xmlk')
     implementation project(':AAdaptKit:systembar')

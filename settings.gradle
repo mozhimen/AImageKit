@@ -34,6 +34,9 @@ include ':matisse'
 include ':matisse:exam'
 include ':ucrop'
 include ':imagezoom'
+include ':fastimagesize'
+include ':fastimagesize:basic'
+include ':fastimagesize:exam'
 //ALibKit_Google
 include ':ALibKit_Google'
 project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
@@ -43,6 +46,7 @@ include ':ALibKit_Jetpack'
 project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
 include ':ALibKit_Jetpack:core'
 include ':ALibKit_Jetpack:annotation'
+include ':ALibKit_Jetpack:databinding'
 //ALibKit_Jetbrains
 include ':ALibKit_Jetbrains'
 project(':ALibKit_Jetbrains').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetbrains")
@@ -53,6 +57,11 @@ include ':ALibKit_Squareup'
 project(':ALibKit_Squareup').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Squareup")
 include ':ALibKit_Squareup:picasso'
 include ':ALibKit_Squareup:okhttp3'
+//KUtilKit
+include ':KUtilKit'
+project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
+include ':KUtilKit:android'
+include ':KUtilKit:kotlin'
 //ASwiftKit
 include ':ASwiftKit'
 project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
@@ -60,22 +69,20 @@ include ':ASwiftKit:basick'
 include ':ASwiftKit:composek'
 include ':ASwiftKit:xmlk'
 include ':ASwiftKit:blurk'
-//KUtilKit
-include ':KUtilKit'
-project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
-include ':KUtilKit:android'
-include ':KUtilKit:kotlin'
+include ':ASwiftKit:bindk'
 //AXmlKit
 include ':AXmlKit'
 project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
 include ':AXmlKit:pagerk'
-//AManifestKit_XXPermission
-include(':AManifestKit_XXPermissions')
-project(':AManifestKit_XXPermissions').projectDir = new File("D:\\WorkSpace\\GitHub\\AManifestKit_XXPermissions")
-include(':AManifestKit_XXPermissions:manifestK_xxpermissions')
-include(':AManifestKit_XXPermissions:library')
+//APermissionKit_XXPermissions
+include(':APermissionKit_XXPermissions')
+project(':APermissionKit_XXPermissions').projectDir = new File("D:\\WorkSpace\\GitHub\\APermissionKit_XXPermissions")
+include(':APermissionKit_XXPermissions:permissionk_xxpermissions')
+include(':APermissionKit_XXPermissions:library')
 //AAdaptKit
 include(':AAdaptKit')
 project(':AAdaptKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AAdaptKit")
 include(':AAdaptKit:systembar')
 
+include ':imageselector'
+include ':pictureselector'

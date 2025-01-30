@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdk 33
+    namespace "q.rorbin.fastimagesize"
+
+    defaultConfig {
+        minSdk 14
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+//publish {
+//    userOrg = 'qstumn'
+//    groupId = 'q.rorbin'
+//    artifactId = 'FastImageSize'
+//    publishVersion = '1.0.3'
+//    desc = 'FastImageSize is a libary can quickly find the size of an image by its uri'
+//    website = 'https://github.com/qstumn/FastImageSize'
+//}
+
+dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':KUtilKit:android')
+
+    //test
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

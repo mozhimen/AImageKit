@@ -29,7 +29,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
+    buildFeatures {
         dataBinding true
     }
 }
@@ -37,7 +37,11 @@ android {
 dependencies {
     implementation project(':ASwiftKit:basick')
     implementation project(':ASwiftKit:blurk')
-    implementation project(/*project.path.replace(project.name, '') +*/':AImageKit:glide')
+    if (rootProject.name == "AImageKit") {
+        implementation project(':glide')
+    } else {
+        implementation project(':AImageKit:glide')
+    }
 
     //test
     testImplementation 'junit:junit:4.13.2'

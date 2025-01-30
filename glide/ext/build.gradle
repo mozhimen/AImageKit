@@ -32,7 +32,11 @@ android {
 
 dependencies {
     implementation project(':ASwiftKit:basick')
-    implementation project(/*project.path.replace(project.name, '') +*/ ':AImageKit:glide')
+    if (rootProject.name=="AImageKit"){
+        implementation project(/*project.path.replace(project.name, '') +*/ ':glide')
+    }else{
+        implementation project(/*project.path.replace(project.name, '') +*/ ':AImageKit:glide')
+    }
     implementation project(':ALibKit_Squareup:okhttp3')
 //    kapt 'com.github.bumptech.glide:compiler:4.16.0'
 

@@ -42,12 +42,17 @@ android {
 
 dependencies {
 /*ImageViewTouch*/
-    implementation project(':AImageKit:imagezoom')
-    implementation "it.sephiroth.android.library.imagezoom:library:1.0.4"
-    implementation project(':AImageKit:glide')
+    if (rootProject.name=="AImageKit"){
+        implementation project(':imagezoom')
+        implementation project(':glide')
+        implementation project(':ucrop')
+    }else {
+        implementation project(':AImageKit:imagezoom')
+        implementation project(':AImageKit:glide')
+        implementation project(':AImageKit:ucrop')
+    }
     implementation project(':ASwiftKit:basick')
     implementation project(':ASwiftKit:xmlk')
-    implementation project(':AImageKit:ucrop')
     implementation project(':AXmlKit:pagerk')
 
     testImplementation 'junit:junit:4.13.2'
