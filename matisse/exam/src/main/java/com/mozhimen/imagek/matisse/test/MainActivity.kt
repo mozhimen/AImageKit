@@ -6,7 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import com.mozhimen.bindk.bases.activity.databinding.BaseActivityVDB
+import com.mozhimen.uik.databinding.bases.activity.databinding.BaseActivityVDB
 import com.mozhimen.kotlin.elemk.commons.I_Listener
 import com.mozhimen.kotlin.utilk.android.content.UtilKPackage
 import com.mozhimen.imagek.matisse.impls.GlideImageEngine

@@ -1,7 +1,7 @@
 package com.mozhimen.imagek.coil2.test
 
 import android.os.Bundle
-import com.mozhimen.bindk.bases.viewbinding.activity.BaseActivityVB
+import com.mozhimen.uik.databinding.bases.viewbinding.activity.BaseActivityVB
 import com.mozhimen.imagek.coil2.loadImage_ofCoil
 import com.mozhimen.imagek.coil2.test.databinding.ActivityImagekCoilBinding
 
