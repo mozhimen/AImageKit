@@ -37,6 +37,9 @@ include ':imagezoom'
 include ':fastimagesize'
 include ':fastimagesize:basic'
 include ':fastimagesize:exam'
+include ':imageselector'
+include ':pictureselector:v2_6_0'
+include ':pictureselector:v3_11_2'
 //ALibKit_Google
 include ':ALibKit_Google'
 project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
@@ -84,5 +87,4 @@ include(':AAdaptKit')
 project(':AAdaptKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AAdaptKit")
 include(':AAdaptKit:systembar')
 
-include ':imageselector'
-include ':pictureselector'
+
