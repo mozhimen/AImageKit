@@ -6,7 +6,6 @@ import android.graphics.Paint
 import androidx.annotation.Px
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
-import com.mozhimen.imagek.glide.impls.RoundedBitmapTransformation.Companion
 import java.security.MessageDigest
 
 /**
@@ -15,28 +14,24 @@ import java.security.MessageDigest
  * @Author Mozhimen / Kolin Zhao
  * @Version 1.0
  */
-class RoundedBorderTransformation(@Px private val _borderWidth: Float, borderColor: Int) : CircleCrop() {
+class BitmapBorderCircleTransformation(@Px private val _borderWidth: Float, borderColor: Int) : CircleCrop() {
     companion object{
-        private const val ID: String = "com.mozhimen.imagek.glide.impls.RoundedBorderTransformation"
+        private const val ID: String = "com.mozhimen.imagek.glide.impls.CircleBorderTransformation"
         private val ID_BYTES: ByteArray = ID.toByteArray(CHARSET)
     }
 
     /////////////////////////////////////////////////////////////////////////
 
-    private val _borderPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-
-    /////////////////////////////////////////////////////////////////////////
-
-    init {
-        _borderPaint.color = borderColor
-        _borderPaint.style = Paint.Style.STROKE
-        _borderPaint.strokeWidth = _borderWidth
+    private val _paintBorder = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = borderColor
+        style = Paint.Style.STROKE
+        strokeWidth = _borderWidth
     }
 
     /////////////////////////////////////////////////////////////////////////
 
     override fun equals(other: Any?): Boolean {
-        return other is RoundedBorderTransformation
+        return other is BitmapBorderCircleTransformation
     }
 
     override fun hashCode(): Int {
@@ -52,7 +47,7 @@ class RoundedBorderTransformation(@Px private val _borderWidth: Float, borderCol
             radiusWidth,
             radiusHeight,
             radiusWidth.coerceAtMost(radiusHeight) - _borderWidth / 2f,
-            _borderPaint
+            _paintBorder
         )
         canvas.setBitmap(null)
         return transform

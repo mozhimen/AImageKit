@@ -22,10 +22,10 @@ import com.mozhimen.kotlin.elemk.commons.I_AListener
 import com.mozhimen.kotlin.elemk.commons.I_Listener
 import com.mozhimen.kotlin.lintk.optins.permission.OPermission_INTERNET
 import com.mozhimen.imagek.glide.commons.ICustomTarget
-import com.mozhimen.imagek.glide.impls.RoundedBorderTransformation
+import com.mozhimen.imagek.glide.impls.BitmapBorderCircleTransformation
 import com.mozhimen.kotlin.utilk.commons.IUtilK
 import com.mozhimen.kotlin.utilk.kotlinx.coroutines.safeResume
-import com.mozhimen.imagek.glide.impls.RoundedBitmapTransformation
+import com.mozhimen.imagek.glide.impls.BitmapCornerRoundedTransformation
 import com.mozhimen.kotlin.elemk.android.cons.CPermission
 import kotlinx.coroutines.suspendCancellableCoroutine
 
@@ -256,7 +256,7 @@ object ImageKGlide : IUtilK {
         contractImage_ofGlide(imageView.context, {
             Glide.with(imageView).load(res)
                 .transition(DrawableTransitionOptions.withCrossFade())
-                .transform(RoundedBorderTransformation(borderWidth, borderColor))
+                .transform(BitmapBorderCircleTransformation(borderWidth, borderColor))
                 .placeholder(placeholder)
                 .error(error)
                 .into(imageView)
@@ -308,7 +308,7 @@ object ImageKGlide : IUtilK {
     ) {
         contractImage_ofGlide(imageView.context, {
             Glide.with(imageView).load(res).apply(RequestOptions().apply {
-                transform(RoundedBitmapTransformation(cornerRadius))//设置圆角大小
+                transform(BitmapCornerRoundedTransformation(cornerRadius))//设置圆角大小
                 error(placeholder).placeholder(placeholder)//错误图、占位图
             }).into(imageView)
         })

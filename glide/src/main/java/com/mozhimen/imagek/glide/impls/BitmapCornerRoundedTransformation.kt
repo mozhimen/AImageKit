@@ -9,7 +9,6 @@ import android.graphics.Shader
 import androidx.annotation.Px
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import java.security.MessageDigest
 
 /**
@@ -33,7 +32,7 @@ import java.security.MessageDigest
  * RequestOptions myOptions = new RequestOptions()
  * .transform(new GlideRoundTransform(this,30));
  */
-class RoundedBitmapTransformation(@Px private val _radius: Float) : BitmapTransformation() {
+class BitmapCornerRoundedTransformation(@Px private val _cornerRadius: Float) : BitmapTransformation() {
     companion object{
         private const val ID: String = "com.mozhimen.imagek.glide.impls.RoundedBitmapTransformation"
         private val ID_BYTES: ByteArray = ID.toByteArray(CHARSET)
@@ -41,18 +40,14 @@ class RoundedBitmapTransformation(@Px private val _radius: Float) : BitmapTransf
 
     /////////////////////////////////////////////////////////////////////////
 
-    private val _roundedPaint = Paint()
-
-    /////////////////////////////////////////////////////////////////////////
-
-    init {
-        _roundedPaint.isAntiAlias = true
+    private val _paintRounded = Paint().apply {
+        isAntiAlias = true
     }
 
     /////////////////////////////////////////////////////////////////////////
 
     override fun equals(other: Any?): Boolean {
-        return other is RoundedBitmapTransformation
+        return other is BitmapCornerRoundedTransformation
     }
 
     override fun hashCode(): Int {
@@ -62,9 +57,9 @@ class RoundedBitmapTransformation(@Px private val _radius: Float) : BitmapTransf
     override fun transform(pool: BitmapPool, toTransform: Bitmap, outWidth: Int, outHeight: Int): Bitmap {
         val transform = pool[toTransform.width, toTransform.height, Bitmap.Config.ARGB_8888]
         val canvas = Canvas(transform)
-        _roundedPaint.setShader(BitmapShader(toTransform, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP))
+        _paintRounded.setShader(BitmapShader(toTransform, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP))
         val rectF = RectF(0f, 0f, toTransform.width.toFloat(), toTransform.height.toFloat())
-        canvas.drawRoundRect(rectF, _radius, _radius, _roundedPaint)
+        canvas.drawRoundRect(rectF, _cornerRadius, _cornerRadius, _paintRounded)
         return transform
     }
 
