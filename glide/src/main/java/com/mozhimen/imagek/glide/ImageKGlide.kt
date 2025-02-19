@@ -79,22 +79,22 @@ object ImageKGlide : IUtilK {
             .apply(RequestOptions().transform(*effects))
 
     @JvmStatic
-    suspend fun getImageWidthAndHeight(res: Any?, context: Context?): Pair<Int, Int> = suspendCancellableCoroutine { coroutine ->
+    suspend fun getImageWidthAndHeight(res: Any?, context: Context?): Pair<Int, Int> = suspendCancellableCoroutine { continuation ->
         contractImage_ofGlide(context, {
             Glide.with(context!!).asBitmap().load(res).into(object : ICustomTarget<Bitmap>() {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     UtilKLogWrapper.d(TAG, "onResourceReady: res $res resource width ${resource.width} height ${resource.height}")
-                    coroutine.safeResume(resource.width to resource.height)
+                    continuation.safeResume(resource.width to resource.height)
                 }
 
                 override fun onLoadFailed(errorDrawable: Drawable?) {
                     UtilKLogWrapper.d(TAG, "onLoadFailed: resource width 0 height 0")
-                    coroutine.safeResume(0 to 0)
+                    continuation.safeResume(0 to 0)
                 }
             })
         }, {
             UtilKLogWrapper.d(TAG, "onLoadFailed: onError of glide")
-            coroutine.safeResume(0 to 0)
+            continuation.safeResume(0 to 0)
         })
     }
 

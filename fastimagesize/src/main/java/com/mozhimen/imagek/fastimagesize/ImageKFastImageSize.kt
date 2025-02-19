@@ -43,7 +43,7 @@ object ImageKFastImageSize : IUtilK {
 
     @JvmStatic
     @Throws(NullPointerException::class)
-    suspend fun getImageWidthAndHeight(strUrl: String): Triple<Int, Int, Int> = suspendCancellableCoroutine { coroutine ->
+    suspend fun getImageWidthAndHeight(strUrl: String): Triple<Int, Int, Int> = suspendCancellableCoroutine { continuation ->
         val startL = System.currentTimeMillis()
         FastImageSize
             .with(strUrl)[
