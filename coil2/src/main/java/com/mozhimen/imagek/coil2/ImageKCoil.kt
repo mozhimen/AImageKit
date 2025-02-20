@@ -9,11 +9,11 @@ import coil.transform.CircleCropTransformation
 import coil.transform.RoundedCornersTransformation
 import com.mozhimen.kotlin.utilk.android.util.dp2px
 import com.mozhimen.imagek.coil2.cons.CCoilBlurCons
-import com.mozhimen.imagek.coil2.temps.BlurTransformation
-import com.mozhimen.imagek.coil2.temps.ColorFilterTransformation
-import com.mozhimen.imagek.coil2.temps.CropTransformation
-import com.mozhimen.imagek.coil2.temps.GrayscaleTransformation
-import com.mozhimen.imagek.coil2.temps.RotateTransformation
+import com.mozhimen.imagek.coil2.impls.BlurTransformation
+import com.mozhimen.imagek.coil2.impls.ColorFilterTransformation
+import com.mozhimen.imagek.coil2.impls.CropTransformation
+import com.mozhimen.imagek.coil2.impls.GrayscaleTransformation
+import com.mozhimen.imagek.coil2.impls.RotateTransformation
 
 /**
  * @ClassName UtilKImageLoader

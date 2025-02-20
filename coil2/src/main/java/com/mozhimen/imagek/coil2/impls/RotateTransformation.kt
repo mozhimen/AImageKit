@@ -1,4 +1,4 @@
-package com.mozhimen.imagek.coil2.temps
+package com.mozhimen.imagek.coil2.impls
 
 import android.graphics.Bitmap
 import androidx.annotation.FloatRange
