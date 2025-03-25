@@ -87,7 +87,7 @@ open class BasePreviewActivity : BaseActivity(), View.OnClickListener, ViewPager
 
     override fun getResourceLayoutId() = R.layout.activity_preview
 
-    override fun setViewData() {
+    override fun initView(savedInstanceState: Bundle?) {
         _buttonPreview.setText(getAttrString(R.attr.Preview_TextBack, R.string.button_back))
 
         mediaPreviewPagerAdapter = MediaPreviewPagerAdapter(supportFragmentManager, null)
@@ -96,7 +96,7 @@ open class BasePreviewActivity : BaseActivity(), View.OnClickListener, ViewPager
         updateApplyButton()
     }
 
-    override fun initListener() {
+    override fun initObserver() {
         setOnClickListener(this, _buttonPreview, _buttonApply, checkView, _layoutOriginal)
         previewViewPager?.addOnPageChangeListener(this)
     }

@@ -3,6 +3,7 @@ package com.mozhimen.imagek.matisse.uis.activities;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.mozhimen.imagek.matisse.bases.BaseActivity;
 import com.mozhimen.imagek.matisse.utils.UIUtils;
@@ -95,7 +97,7 @@ public class UCropActivity extends BaseActivity implements View.OnClickListener 
     }
 
     @Override
-    public void setViewData() {
+    public void initView(@Nullable Bundle savedInstanceState) {
         final Intent intent = getIntent();
         setupViews();
         setImageData(intent);
@@ -103,7 +105,7 @@ public class UCropActivity extends BaseActivity implements View.OnClickListener 
     }
 
     @Override
-    public void initListener() {
+    public void initObserver() {
         UIUtils.setOnClickListener(this
                 , findViewById(com.mozhimen.imagek.matisse.R.id.button_complete), findViewById(com.mozhimen.imagek.matisse.R.id.button_back));
     }

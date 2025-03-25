@@ -29,28 +29,22 @@ abstract class BaseActivity : BaseActivity(), IActivity {
         activity = this
 
         initFlag()
-        setContentView(getResourceLayoutId())
+        initLayout()
         configActivity()
         configSaveInstanceState(savedInstanceState)
-        setViewData()
-        initListener()
+        initView(savedInstanceState)
+        initObserver()
     }
 
     //////////////////////////////////////////////////////////////////////////////////
-
-    abstract fun setViewData()
-
-    abstract fun initListener()
 
     abstract fun getResourceLayoutId(): Int
 
     //////////////////////////////////////////////////////////////////////////////////
 
-    override fun initLayout() {}
-
-    override fun initData(savedInstanceState: android.os.Bundle?) {}
-
-    override fun initFlag() {}
+    override fun initLayout() {
+        setContentView(getResourceLayoutId())
+    }
 
     /**
      * 处理状态栏(状态栏颜色、状态栏字体颜色、是否隐藏等操作)

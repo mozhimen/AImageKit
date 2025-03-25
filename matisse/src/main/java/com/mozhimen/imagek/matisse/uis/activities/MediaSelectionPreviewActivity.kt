@@ -28,8 +28,7 @@ class MediaSelectionPreviewActivity : BasePreviewActivity() {
 
     //////////////////////////////////////////////////////////
 
-    override fun setViewData() {
-        super.setViewData()
+    override fun initView(savedInstanceState: Bundle?) {
         val bundle = intent.getBundleExtra(CImageKMatisse.EXTRA_DEFAULT_BUNDLE)
         val selected = bundle?.getParcelableArrayList<Media>(CImageKMatisse.STATE_SELECTION)
         selected?.apply {

@@ -174,7 +174,7 @@ class MatisseActivity : BaseActivity(),
     override fun getResourceLayoutId() = R.layout.activity_matisse
 
     @OptIn(OApiInit_ByLazy::class, OApiCall_BindLifecycle::class)
-    override fun setViewData() {
+    override fun initView(savedInstanceState: Bundle?) {
         _buttonApply.setText(getAttrString(R.attr.BottomBarAlbum_Text, R.string.album_name_all))
         _mediaSelectionProxy = MediaSelectionProxy(this).apply { onCreate(savedInstanceState) }
         _albumLoadProxy = AlbumLoadProxy(this, _albumLoadListener)
@@ -182,7 +182,7 @@ class MatisseActivity : BaseActivity(),
         updateBottomToolbar()
     }
 
-    override fun initListener() {
+    override fun initObserver() {
         setOnClickListener(this, _buttonApply, _buttonPreview, _layoutOriginal, _buttonComplete, _buttonBack)
     }
 

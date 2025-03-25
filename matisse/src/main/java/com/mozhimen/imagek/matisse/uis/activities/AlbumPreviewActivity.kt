@@ -1,6 +1,7 @@
 package com.mozhimen.imagek.matisse.uis.activities
 
 import android.database.Cursor
+import android.os.Bundle
 import com.mozhimen.imagek.matisse.bases.BasePreviewActivity
 import com.mozhimen.imagek.matisse.mos.Album
 import com.mozhimen.imagek.matisse.cons.CImageKMatisse
@@ -19,8 +20,7 @@ class AlbumPreviewActivity : BasePreviewActivity(), IAlbumLoadListener {
 
     //////////////////////////////////////////////////////////
 
-    override fun setViewData() {
-        super.setViewData()
+    override fun initView(savedInstanceState: Bundle?) {
         _albumSelectionCursorLoaderCallbacks.onCreate(this, this)
         val album = intent.getParcelableExtra<Album>(CImageKMatisse.EXTRA_ALBUM) ?: return
         _albumSelectionCursorLoaderCallbacks.loadAlbum(album)
