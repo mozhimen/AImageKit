@@ -87,6 +87,9 @@ open class BasePreviewActivity : BaseActivity(), View.OnClickListener, ViewPager
 
     override fun getResourceLayoutId() = R.layout.activity_preview
 
+    override fun initData(savedInstanceState: Bundle?) {
+    }
+
     override fun initView(savedInstanceState: Bundle?) {
         _buttonPreview.setText(getAttrString(R.attr.Preview_TextBack, R.string.button_back))
 

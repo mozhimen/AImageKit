@@ -173,6 +173,10 @@ class MatisseActivity : BaseActivity(),
 
     override fun getResourceLayoutId() = R.layout.activity_matisse
 
+    override fun initData(savedInstanceState: Bundle?) {
+
+    }
+
     @OptIn(OApiInit_ByLazy::class, OApiCall_BindLifecycle::class)
     override fun initView(savedInstanceState: Bundle?) {
         _buttonApply.setText(getAttrString(R.attr.BottomBarAlbum_Text, R.string.album_name_all))

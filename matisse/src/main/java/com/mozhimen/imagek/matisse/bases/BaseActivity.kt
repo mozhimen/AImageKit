@@ -42,6 +42,10 @@ abstract class BaseActivity : BaseActivity(), IActivity {
 
     //////////////////////////////////////////////////////////////////////////////////
 
+    override fun initData(savedInstanceState: Bundle?) {
+
+    }
+
     override fun initLayout() {
         setContentView(getResourceLayoutId())
     }
