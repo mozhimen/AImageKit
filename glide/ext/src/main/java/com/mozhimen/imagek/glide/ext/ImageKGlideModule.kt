@@ -12,8 +12,6 @@ package com.mozhimen.imagek.glide.ext
  * @Author Mozhimen & Kolin Zhao
  * @Version 1.0
  */
-
-
 /*
 @Excludes(com.bumptech.glide.integration.okhttp3.OkHttpLibraryGlideModule::class)
 @GlideModule

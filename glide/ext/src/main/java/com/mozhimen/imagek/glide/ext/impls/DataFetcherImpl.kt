@@ -1,4 +1,4 @@
-package com.mozhimen.imagek.glide.ext
+package com.mozhimen.imagek.glide.ext.impls
 
 import android.text.TextUtils
 import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
@@ -8,6 +8,7 @@ import com.bumptech.glide.load.HttpException
 import com.bumptech.glide.load.data.DataFetcher
 import com.bumptech.glide.util.ContentLengthInputStream
 import com.bumptech.glide.util.Preconditions
+import com.mozhimen.imagek.glide.ext.mos.GlideAppMapper
 import com.mozhimen.kotlin.elemk.commons.IA_AListener
 import com.mozhimen.kotlin.utilk.commons.IUtilK
 import okhttp3.Call
@@ -25,9 +26,12 @@ import java.io.InputStream
  * @Version 1.0
  */
 
-class OkHttpInputStreamDataFetcher(client: Call.Factory, imageKGlideFile: ImageKGlideFile, private val _onExecuteFileId: IA_AListener<String?>) : DataFetcher<InputStream>, Callback, IUtilK {
-    private val _client: Call.Factory
-    private val _ImageKGlideFile: ImageKGlideFile
+class DataFetcherImpl constructor(
+    private val _factory: Call.Factory,
+    private val _glideAppMapper: GlideAppMapper,
+    private val _onExecuteMapper: IA_AListener<String?>,
+) : DataFetcher<InputStream>, Callback, IUtilK {
+
     private var _inputStream: InputStream? = null
     private var _responseBody: ResponseBody? = null
     private var _dataCallback: DataFetcher.DataCallback<in InputStream>? = null
@@ -37,26 +41,22 @@ class OkHttpInputStreamDataFetcher(client: Call.Factory, imageKGlideFile: ImageK
     @Volatile
     private var _call: Call? = null
 
-    // Public API.
-    init {
-        _client = client
-        _ImageKGlideFile = imageKGlideFile
-    }
+    //////////////////////////////////////////////////////////////////////////
 
     override fun loadData(priority: Priority, callback: DataFetcher.DataCallback<in InputStream>) {
-        val imageKGlideFile: ImageKGlideFile = _ImageKGlideFile
-        var imageFileIdUrl: String? = imageKGlideFile.url
-        if (TextUtils.isEmpty(imageFileIdUrl)) {
-            imageFileIdUrl = _onExecuteFileId.invoke(imageKGlideFile.fileId)//Router.serviceRouter.executeCmsNodeGetByIdAndPath(glideImageFileId.getFileId())
+        val glideAppMapper: GlideAppMapper = _glideAppMapper
+        var destination: String? = glideAppMapper.destination
+        if (TextUtils.isEmpty(destination)) {
+            destination = _onExecuteMapper.invoke(glideAppMapper.source)//Router.serviceRouter.executeCmsNodeGetByIdAndPath(glideImageFileId.getFileId())
         }
-        if (imageFileIdUrl.isNullOrEmpty()) {
+        if (destination.isNullOrEmpty()) {
             callback.onLoadFailed(RuntimeException("查询失败，未找到该节点"))
             return
         }
-        val requestBuilder: Request.Builder = Request.Builder().url(imageFileIdUrl)
+        val requestBuilder: Request.Builder = Request.Builder().url(destination)
         val request: Request = requestBuilder.build()
         _dataCallback = callback
-        _call = _client.newCall(request)
+        _call = _factory.newCall(request)
         _call!!.enqueue(this)
     }
 
@@ -79,24 +79,21 @@ class OkHttpInputStreamDataFetcher(client: Call.Factory, imageKGlideFile: ImageK
     override fun cleanup() {
         try {
             _inputStream?.close()
+            _responseBody?.close()
+            _dataCallback = null
         } catch (e: IOException) {
             // Ignored
         }
-        _responseBody?.close()
-        _dataCallback = null
     }
 
     override fun cancel() {
-        val local = _call
-        local?.cancel()
+        _call?.cancel()
     }
 
-    override fun getDataClass(): Class<InputStream> {
-        return InputStream::class.java
-    }
+    override fun getDataClass(): Class<InputStream> =
+        InputStream::class.java
 
-    override fun getDataSource(): DataSource {
-        return DataSource.REMOTE
-    }
+    override fun getDataSource(): DataSource =
+        DataSource.REMOTE
 }
 

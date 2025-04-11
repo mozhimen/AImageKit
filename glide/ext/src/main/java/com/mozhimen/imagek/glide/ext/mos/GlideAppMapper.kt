@@ -1,4 +1,4 @@
-package com.mozhimen.imagek.glide.ext
+package com.mozhimen.imagek.glide.ext.mos
 
 /**
  * @ClassName GlideImageFileId
@@ -6,12 +6,12 @@ package com.mozhimen.imagek.glide.ext
  * @Author Mozhimen & Kolin Zhao
  * @Version 1.0
  */
-class ImageKGlideFile constructor(var fileId: String) {
+class GlideAppMapper constructor(var source: String) {
 
     /**
      * fid对应的url
      */
-    var url: String? = null
+    var destination: String? = null
 
     ////////////////////////////////////////////////////////////////
 
@@ -21,10 +21,10 @@ class ImageKGlideFile constructor(var fileId: String) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || javaClass != other.javaClass) return false
-        return fileId == (other as ImageKGlideFile).fileId
+        return source == (other as GlideAppMapper).source
     }
 
     override fun hashCode(): Int {
-        return fileId.hashCode()
+        return source.hashCode()
     }
 }
