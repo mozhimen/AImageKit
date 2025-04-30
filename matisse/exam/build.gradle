@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.imagek.matisse.test'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.mozhimen.imagek.matisse.test"

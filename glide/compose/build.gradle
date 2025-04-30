@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.imagek.glide.compose'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 19
@@ -30,7 +30,7 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions.kotlinCompilerExtensionVersion = "1.5.10"
+    composeOptions.kotlinCompilerExtensionVersion = "1.5.15"
 }
 
 dependencies {

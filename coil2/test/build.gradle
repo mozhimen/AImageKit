@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.imagek.coil2.test'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.mozhimen.imagek.coil.test"

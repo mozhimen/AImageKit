@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.imagek.pictureselector.v3_11_2'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 19

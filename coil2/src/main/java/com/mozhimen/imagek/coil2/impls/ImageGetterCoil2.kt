@@ -19,7 +19,7 @@ import java.lang.ref.WeakReference
  * @Date 2025/2/20
  * @Version 1.0
  */
-class ImageGetterCoil2(
+open class ImageGetterCoil2(
     textView: TextView,
     private val imageLoader: ImageLoader = Coil.imageLoader(textView.context),
     private val _modifier: IA_AListener<String>? = null,
