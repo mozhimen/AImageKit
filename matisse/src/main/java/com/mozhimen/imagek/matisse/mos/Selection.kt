@@ -12,7 +12,7 @@ import com.mozhimen.imagek.matisse.commons.ILoadStatusBarListener
 import com.mozhimen.imagek.matisse.commons.IMediaCheckedListener
 import com.mozhimen.imagek.matisse.commons.IMediaSelectedListener
 import java.io.File
-import com.mozhimen.kotlin.elemk.android.provider.MediaStoreCaptureProxy.CaptureStrategy
+import com.mozhimen.kotlin.elemk.android.provider.impls.MediaStoreCaptureProxy.CaptureStrategy
 import com.mozhimen.imagek.matisse.commons.ILoadToolBarListener
 
 /**

@@ -45,6 +45,7 @@ dependencies {
     implementation project(':APermissionKit_XXPermissions:permissionk_xxpermissions')
     implementation project(':ASwiftKit:basick')
     implementation project(':ASwiftKit:xmlk')
+    implementation project(':ASwiftKit:uik:databinding')
     implementation project(':AAdaptKit:systembar')
     implementation project(':glide')
 

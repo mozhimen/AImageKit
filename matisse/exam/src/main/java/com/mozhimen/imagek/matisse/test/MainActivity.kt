@@ -6,21 +6,20 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import com.mozhimen.uik.databinding.bases.activity.databinding.BaseActivityVDB
 import com.mozhimen.kotlin.elemk.commons.I_Listener
 import com.mozhimen.kotlin.utilk.android.content.UtilKPackage
 import com.mozhimen.imagek.matisse.impls.GlideImageEngine
 import com.mozhimen.imagek.matisse.ImageKMatisse
 import com.mozhimen.imagek.matisse.helpers.MediaMimeTypeHelper
-import com.mozhimen.kotlin.elemk.android.provider.MediaStoreCaptureProxy
+import com.mozhimen.kotlin.elemk.android.provider.impls.MediaStoreCaptureProxy
 import com.mozhimen.kotlin.utilk.kotlin.collections.ifNotEmpty
 import com.mozhimen.imagek.matisse.ImageKMatisseSelectionBuilder
 import com.mozhimen.imagek.matisse.cons.CImageKMatisse
 import com.mozhimen.imagek.matisse.test.databinding.ActivityMainBinding
 import com.mozhimen.kotlin.utilk.android.net.uri2strFilePathName
-import com.mozhimen.manifestk.xxpermissions.XXPermissionsCheckUtil
-import com.mozhimen.manifestk.xxpermissions.XXPermissionsNavHostUtil
-import com.mozhimen.manifestk.xxpermissions.XXPermissionsRequestUtil
+import com.mozhimen.permissionk.xxpermissions.XXPermissionsCheckUtil
+import com.mozhimen.permissionk.xxpermissions.XXPermissionsNavHostUtil
+import com.mozhimen.permissionk.xxpermissions.XXPermissionsRequestUtil
 import com.mozhimen.adaptk.systembar.cons.CPropertyOr
 import com.mozhimen.adaptk.systembar.initAdaptKSystemBar
 import com.mozhimen.kotlin.lintk.optins.permission.OPermission_MANAGE_EXTERNAL_STORAGE
@@ -28,6 +27,7 @@ import com.mozhimen.kotlin.lintk.optins.permission.OPermission_READ_EXTERNAL_STO
 import com.mozhimen.kotlin.lintk.optins.permission.OPermission_WRITE_EXTERNAL_STORAGE
 import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import com.mozhimen.imagek.glide.ImageKGlide
+import com.mozhimen.uik.databinding.bases.viewdatabinding.activity.BaseActivityVDB
 
 class MainActivity : BaseActivityVDB<ActivityMainBinding>() {
     private var _selectionBuilder: ImageKMatisseSelectionBuilder? = null
@@ -64,7 +64,7 @@ class MainActivity : BaseActivityVDB<ActivityMainBinding>() {
         uriList?.ifNotEmpty {
             _imagePathName = it[0].uri2strFilePathName()
             if (!_imagePathName.isNullOrEmpty()) {
-                ImageKGlide.loadImageCircle_ofGlide(vdb.mainImg,_imagePathName, com.mozhimen.xmlk.R.color.cok_white,com.mozhimen.xmlk.R.color.cok_white)
+                ImageKGlide.loadImageCircle_ofGlide(vdb.mainImg,_imagePathName, com.mozhimen.uik.R.color.cok_white,com.mozhimen.uik.R.color.cok_white)
             }
         }
     }
@@ -108,15 +108,15 @@ class MainActivity : BaseActivityVDB<ActivityMainBinding>() {
     @OptIn(OPermission_READ_EXTERNAL_STORAGE::class, OPermission_WRITE_EXTERNAL_STORAGE::class, OPermission_MANAGE_EXTERNAL_STORAGE::class)
     @SuppressLint("MissingPermission")
     private fun startPermissionReadWrite(context: Context, allGrant: I_Listener? = null) {
-        if (XXPermissionsCheckUtil.hasReadWritePermission(context)) {
+        if (XXPermissionsCheckUtil.hasPermission_EXTERNAL_STORAGE(context)) {
             allGrant?.invoke()
         } else {
-            XXPermissionsRequestUtil.requestReadWritePermission(context,
+            XXPermissionsRequestUtil.requestPermission_EXTERNAL_STORAGE(context,
                 onGranted = {
                     allGrant?.invoke()
                 },
                 onDenied = {
-                    XXPermissionsNavHostUtil.startSettingManageStorage(context)
+                    XXPermissionsNavHostUtil.startPermission_EXTERNAL_STORAGE(context)
                 }
             )
         }

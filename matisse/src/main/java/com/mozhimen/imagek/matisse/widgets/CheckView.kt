@@ -215,8 +215,8 @@ class CheckView : View {
             val stop2 = outerRadius / gradientRadius
             val stop3 = 1f
 
-            val shadow = ContextCompat.getColor(context, com.mozhimen.xmlk.R.color.cok_tran_05_0d0)
-            val shadowHint = ContextCompat.getColor(context, com.mozhimen.xmlk.R.color.cok_transparent)
+            val shadow = ContextCompat.getColor(context, com.mozhimen.uik.R.color.cok_tran_05_0d0)
+            val shadowHint = ContextCompat.getColor(context, com.mozhimen.uik.R.color.cok_transparent)
             shadowPaint?.shader = (RadialGradient(
                 halfDensitySize, halfDensitySize, kdensity.times(gradientRadius),
                 intArrayOf(shadowHint, shadow, shadow, shadowHint),

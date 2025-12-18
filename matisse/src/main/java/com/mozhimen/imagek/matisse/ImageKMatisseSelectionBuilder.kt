@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo.*
 import androidx.annotation.StyleRes
-import com.mozhimen.kotlin.elemk.android.provider.MediaStoreCaptureProxy
+import com.mozhimen.kotlin.elemk.android.provider.impls.MediaStoreCaptureProxy
 import com.mozhimen.imagek.matisse.annors.AScreenOrientation
 import com.mozhimen.imagek.matisse.commons.IImageEngine
 import com.mozhimen.imagek.matisse.bases.BaseMediaFilter

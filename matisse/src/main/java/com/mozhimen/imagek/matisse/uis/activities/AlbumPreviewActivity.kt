@@ -47,9 +47,9 @@ class AlbumPreviewActivity : BasePreviewActivity(), IAlbumLoadListener {
         }
 
         if (items.isEmpty()) return
-        val adapter = previewViewPager?.adapter as MediaPreviewPagerAdapter
-        adapter.addAll(items)
-        adapter.notifyDataSetChanged()
+        val adapter = previewViewPager?.adapter as? MediaPreviewPagerAdapter?
+        adapter?.addAll(items)
+        adapter?.notifyDataSetChanged()
         if (!isAlreadySetPosition) {
             isAlreadySetPosition = true
             val selected = intent.getParcelableExtra<Media>(CImageKMatisse.EXTRA_ITEM) ?: return

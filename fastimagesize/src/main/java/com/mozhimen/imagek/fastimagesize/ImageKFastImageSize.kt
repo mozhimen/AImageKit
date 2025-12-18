@@ -51,10 +51,10 @@ object ImageKFastImageSize : IUtilK {
                 val res = "图片尺寸: " + size.contentToString() + "   用时 : " + (System.currentTimeMillis() - startL) + "毫秒"
                 Log.d(TAG, "getImageWidthAndHeight: res $res url $strUrl")
                 size?.let {
-                    coroutine.resume(Triple(size[0], size[1], size[2]))
+                    continuation.resume(Triple(size[0], size[1], size[2]))
 
                 } ?: run {
-                    coroutine.resume(Triple(0, 0, ImageType.NULL))
+                    continuation.resume(Triple(0, 0, ImageType.NULL))
                 }
             }]
     }

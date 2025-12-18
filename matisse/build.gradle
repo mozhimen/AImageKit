@@ -53,6 +53,7 @@ dependencies {
     }
     implementation project(':ASwiftKit:basick')
     implementation project(':ASwiftKit:xmlk')
+    implementation project(':ASwiftKit:uik')
     implementation project(':AXmlKit:pagerk')
 
     testImplementation 'junit:junit:4.13.2'

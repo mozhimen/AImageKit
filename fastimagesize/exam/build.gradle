@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 35
     namespace "q.rorbin.fastimagesizedemo"
     defaultConfig {
         applicationId "q.rorbin.fastimagesizedemo"

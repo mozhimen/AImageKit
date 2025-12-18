@@ -28,7 +28,7 @@ class CheckRadioView : AppCompatImageView {
             typedArray.getColor(0, ResourcesCompat.getColor(resources, R.color.matisse_selector_color_text_gray, context.theme)
         )
         val unSelectUdColor =
-            ResourcesCompat.getColor(resources, com.mozhimen.xmlk.R.color.cok_gray_808080, context.theme)
+            ResourcesCompat.getColor(resources, com.mozhimen.uik.R.color.cok_gray_808080, context.theme)
         typedArray.recycle()
 
         selectedColorFilter = PorterDuffColorFilter(selectedColor, PorterDuff.Mode.SRC_IN)
