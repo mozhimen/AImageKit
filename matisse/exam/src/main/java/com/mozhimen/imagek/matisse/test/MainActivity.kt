@@ -12,7 +12,7 @@ import com.mozhimen.imagek.matisse.impls.GlideImageEngine
 import com.mozhimen.imagek.matisse.ImageKMatisse
 import com.mozhimen.imagek.matisse.helpers.MediaMimeTypeHelper
 import com.mozhimen.kotlin.elemk.android.provider.impls.MediaStoreCaptureProxy
-import com.mozhimen.kotlin.utilk.kotlin.collections.ifNotEmpty
+
 import com.mozhimen.imagek.matisse.ImageKMatisseSelectionBuilder
 import com.mozhimen.imagek.matisse.cons.CImageKMatisse
 import com.mozhimen.imagek.matisse.test.databinding.ActivityMainBinding
@@ -61,12 +61,12 @@ class MainActivity : BaseActivityVDB<ActivityMainBinding>() {
         if (data == null) return
         // 获取uri返回值  裁剪结果不返回uri
         val uriList = ImageKMatisse.obtainResult(data)
-        uriList?.ifNotEmpty {
+        uriList.ifNotNullOrEmptyOr( {
             _imagePathName = it[0].uri2strFilePathName()
             if (!_imagePathName.isNullOrEmpty()) {
                 ImageKGlide.loadImageCircle_ofGlide(vdb.mainImg,_imagePathName, com.mozhimen.uik.R.color.cok_white,com.mozhimen.uik.R.color.cok_white)
             }
-        }
+        })
     }
 
     private fun createMatisse() {

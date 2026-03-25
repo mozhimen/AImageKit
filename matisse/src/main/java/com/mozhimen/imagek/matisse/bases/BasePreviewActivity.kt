@@ -159,7 +159,7 @@ open class BasePreviewActivity : BaseActivity(), View.OnClickListener, ViewPager
 
             _buttonApply -> {
                 if (selection?.openCrop() == true) {
-                    val item = mediaSelectionProxy.items()[0]
+                    val item = mediaSelectionProxy.items().getOrNull(0) ?: return
 
                     if (selection?.isSupportCrop(item) == true) {
                         item.getContentUri().apply { gotoImageCrop(this@BasePreviewActivity, arrayListOf(this)) }
