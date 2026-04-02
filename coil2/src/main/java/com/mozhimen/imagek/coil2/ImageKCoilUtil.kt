@@ -7,7 +7,7 @@ import androidx.annotation.RequiresPermission
 import coil.ImageLoader
 import coil.imageLoader
 import coil.request.ImageRequest
-import com.mozhimen.kotlin.lintk.optins.permission.OPermission_INTERNET
+import com.mozhimen.kotlin.lintk.optins.manifest.uses_permission.OUsesPermission_INTERNET
 import com.mozhimen.kotlin.elemk.android.cons.CPermission
 import com.mozhimen.kotlin.utilk.bases.BaseUtilK
 
@@ -19,14 +19,14 @@ import com.mozhimen.kotlin.utilk.bases.BaseUtilK
  * @Version 1.0
  */
 @RequiresPermission(CPermission.INTERNET)
-@OPermission_INTERNET
+@OUsesPermission_INTERNET
 suspend fun String.strUrl2bitmapAnyOfCoil(): Bitmap? =
     ImageKCoilUtil.strUrl2bitmapAnyOfCoil(this)
 
 object ImageKCoilUtil : BaseUtilK(){
     @JvmStatic
     @RequiresPermission(CPermission.INTERNET)
-    @OPermission_INTERNET
+    @OUsesPermission_INTERNET
     suspend fun strUrl2bitmapAnyOfCoil(strUrl: String): Bitmap? =
         (getImageLoader(_context).execute(ImageRequest.Builder(_context).data(strUrl).build()).drawable as? BitmapDrawable)?.bitmap
 

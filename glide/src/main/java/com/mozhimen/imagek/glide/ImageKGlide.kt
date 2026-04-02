@@ -20,7 +20,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.transition.Transition
 import com.mozhimen.kotlin.elemk.commons.I_AListener
 import com.mozhimen.kotlin.elemk.commons.I_Listener
-import com.mozhimen.kotlin.lintk.optins.permission.OPermission_INTERNET
+import com.mozhimen.kotlin.lintk.optins.manifest.uses_permission.OUsesPermission_INTERNET
 import com.mozhimen.imagek.glide.commons.ICustomTarget
 import com.mozhimen.imagek.glide.impls.BitmapBorderCircleTransformation
 import com.mozhimen.kotlin.utilk.commons.IUtilK
@@ -36,13 +36,13 @@ import kotlinx.coroutines.suspendCancellableCoroutine
  * @Version 1.0
  */
 @RequiresPermission(CPermission.INTERNET)
-@OPermission_INTERNET
+@OUsesPermission_INTERNET
 @WorkerThread
 fun String.strUrl2bitmap_ofGlide(context: Context?, placeholder: Int, width: Int, height: Int): Bitmap? =
     ImageKGlide.strUrl2bitmap_ofGlide(this, context, placeholder, width, height)
 
 @RequiresPermission(CPermission.INTERNET)
-@OPermission_INTERNET
+@OUsesPermission_INTERNET
 @WorkerThread
 fun String.strUrl2bitmap_ofGlide(context: Context?, placeholder: Int, width: Int, height: Int, cornerRadius: Int): Bitmap? =
     ImageKGlide.strUrl2bitmap_ofGlide(this, context, placeholder, width, height, cornerRadius)
@@ -169,14 +169,14 @@ object ImageKGlide : IUtilK {
 
     @JvmStatic
     @RequiresPermission(CPermission.INTERNET)
-    @OPermission_INTERNET
+    @OUsesPermission_INTERNET
     @WorkerThread
     fun strUrl2bitmap_ofGlide(strUrl: String, context: Context?, placeholder: Int, width: Int, height: Int): Bitmap? =
         ImageKGlide.obj2Bitmap(strUrl, context, placeholder, width, height)
 
     @JvmStatic
     @RequiresPermission(CPermission.INTERNET)
-    @OPermission_INTERNET
+    @OUsesPermission_INTERNET
     @WorkerThread
     fun strUrl2bitmap_ofGlide(strUrl: String, context: Context?, placeholder: Int, width: Int, height: Int, cornerRadius: Int): Bitmap? =
         ImageKGlide.obj2Bitmap(strUrl, context, placeholder, width, height, cornerRadius)

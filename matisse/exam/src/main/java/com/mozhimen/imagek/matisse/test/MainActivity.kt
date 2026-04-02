@@ -22,11 +22,12 @@ import com.mozhimen.permissionk.xxpermissions.XXPermissionsNavHostUtil
 import com.mozhimen.permissionk.xxpermissions.XXPermissionsRequestUtil
 import com.mozhimen.adaptk.systembar.cons.CPropertyOr
 import com.mozhimen.adaptk.systembar.initAdaptKSystemBar
-import com.mozhimen.kotlin.lintk.optins.permission.OPermission_MANAGE_EXTERNAL_STORAGE
-import com.mozhimen.kotlin.lintk.optins.permission.OPermission_READ_EXTERNAL_STORAGE
-import com.mozhimen.kotlin.lintk.optins.permission.OPermission_WRITE_EXTERNAL_STORAGE
+import com.mozhimen.kotlin.lintk.optins.manifest.uses_permission.OUsesPermission_MANAGE_EXTERNAL_STORAGE
+import com.mozhimen.kotlin.lintk.optins.manifest.uses_permission.OUsesPermission_READ_EXTERNAL_STORAGE
+import com.mozhimen.kotlin.lintk.optins.manifest.uses_permission.OUsesPermission_WRITE_EXTERNAL_STORAGE
 import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import com.mozhimen.imagek.glide.ImageKGlide
+import com.mozhimen.kotlin.utilk.kotlin.collections.ifNotNullOrEmptyOr
 import com.mozhimen.uik.databinding.bases.viewdatabinding.activity.BaseActivityVDB
 
 class MainActivity : BaseActivityVDB<ActivityMainBinding>() {
@@ -105,7 +106,7 @@ class MainActivity : BaseActivityVDB<ActivityMainBinding>() {
 
     }
 
-    @OptIn(OPermission_READ_EXTERNAL_STORAGE::class, OPermission_WRITE_EXTERNAL_STORAGE::class, OPermission_MANAGE_EXTERNAL_STORAGE::class)
+    @OptIn(OUsesPermission_READ_EXTERNAL_STORAGE::class, OUsesPermission_WRITE_EXTERNAL_STORAGE::class, OUsesPermission_MANAGE_EXTERNAL_STORAGE::class)
     @SuppressLint("MissingPermission")
     private fun startPermissionReadWrite(context: Context, allGrant: I_Listener? = null) {
         if (XXPermissionsCheckUtil.hasPermission_EXTERNAL_STORAGE(context)) {

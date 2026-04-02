@@ -31,9 +31,9 @@ import com.mozhimen.imagek.matisse.uis.adapters.AlbumSelectionAdapter
 import com.mozhimen.imagek.matisse.uis.fragments.AlbumSelectionFragment
 import com.mozhimen.imagek.matisse.widgets.CheckRadioView
 import com.mozhimen.kotlin.elemk.android.provider.impls.MediaStoreCaptureProxy
-import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
-import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
-import com.mozhimen.kotlin.lintk.optins.permission.OPermission_QUERY_ALL_PACKAGES
+import com.mozhimen.kotlin.lintk.optins.api.OApiCall_BindLifecycle
+import com.mozhimen.kotlin.lintk.optins.api.OApiInit_ByLazy
+import com.mozhimen.kotlin.lintk.optins.manifest.uses_permission.OUsesPermission_QUERY_ALL_PACKAGES
 import com.mozhimen.kotlin.utilk.kotlin.UtilKLazyJVM.lazy_ofNone
 import com.mozhimen.imagek.matisse.commons.IMediaCheckSelectSateListener
 import com.mozhimen.imagek.matisse.commons.IMediaClickListener
@@ -197,7 +197,7 @@ class MatisseActivity : BaseActivity(),
         )
     }
 
-    @OptIn(OPermission_QUERY_ALL_PACKAGES::class)
+    @OptIn(OUsesPermission_QUERY_ALL_PACKAGES::class)
     override fun onCapture() {
         _mediaStoreCaptureProxy?.dispatchCaptureIntent(this, CImageKMatisse.REQUEST_CODE_CAPTURE)
     }
