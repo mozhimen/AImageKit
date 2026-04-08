@@ -38,8 +38,8 @@ android {
 
 dependencies {
     implementation project(':glide')
-    implementation project(':ASwiftKit:basick')
-    implementation project(':ASwiftKit:uik:databinding')
+    implementation 'com.github.mozhimen.ASwiftKit:basick:2.0.3'
+    implementation 'com.github.mozhimen.ASwiftKit:uik-databinding:2.0.3'
     //test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

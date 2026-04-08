@@ -37,7 +37,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':fastimagesize')
-    implementation project(':ASwiftKit:uik:databinding')
+    implementation 'com.github.mozhimen.ASwiftKit:uik-databinding:2.0.3'
 
     //test
     testImplementation 'junit:junit:4.13.2'

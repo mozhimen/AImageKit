@@ -51,8 +51,8 @@ dependencies {
         implementation project(':AImageKit:glide')
         implementation project(':AImageKit:ucrop')
     }
-    implementation project(':ASwiftKit:basick')
-    implementation project(':ASwiftKit:xmlk')
+    implementation 'com.github.mozhimen.ASwiftKit:basick:2.0.3'
+    implementation 'com.github.mozhimen.ASwiftKit:xmlk:2.0.3'
     implementation project(':ASwiftKit:uik')
     implementation project(':AXmlKit:pagerk')
 

@@ -39,7 +39,7 @@ dependencies {
     api 'io.coil-kt:coil-gif:2.2.0'
     api 'io.coil-kt:coil-svg:2.2.0'
 
-    implementation project(':ASwiftKit:basick')
+    implementation 'com.github.mozhimen.ASwiftKit:basick:2.0.3'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

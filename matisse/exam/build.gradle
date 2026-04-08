@@ -41,12 +41,12 @@ android {
 }
 
 dependencies {
-    implementation project(':matisse')
+    implementation 'com.github.mozhimen.ASwiftKit:basick:2.0.3'
+    implementation 'com.github.mozhimen.ASwiftKit:xmlk:2.0.3'
+    implementation 'com.github.mozhimen.ASwiftKit:uik-databinding:2.0.3'
+    implementation 'com.github.mozhimen.AAdaptKit:systembar:0.0.3'
     implementation project(':APermissionKit_XXPermissions:permissionk_xxpermissions')
-    implementation project(':ASwiftKit:basick')
-    implementation project(':ASwiftKit:xmlk')
-    implementation project(':ASwiftKit:uik:databinding')
-    implementation project(':AAdaptKit:systembar')
+    implementation project(':matisse')
     implementation project(':glide')
 
     testImplementation 'junit:junit:4.13.2'

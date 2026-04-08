@@ -1,7 +1,10 @@
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        google()
+        mavenCentral()
         mavenLocal()
+        maven { url "https://jitpack.io" }
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
@@ -12,10 +15,7 @@ dependencyResolutionManagement {
         maven { url 'https://gitee.com/liuchaoya/libcommon/raw/master/repository/' }
         maven { url "https://repo.eclipse.org/content/repositories/paho-snapshots/" }
         maven { url 'https://developer.huawei.com/repo/' }
-        maven { url "https://jitpack.io" }
         maven { url 'https://www.jitpack.io' }
-        mavenCentral()
-        google()
     }
 }
 
@@ -82,9 +82,5 @@ include(':APermissionKit_XXPermissions')
 project(':APermissionKit_XXPermissions').projectDir = new File("D:\\WorkSpace\\GitHub\\APermissionKit_XXPermissions")
 include(':APermissionKit_XXPermissions:permissionk_xxpermissions')
 include(':APermissionKit_XXPermissions:library')
-//AAdaptKit
-include(':AAdaptKit')
-project(':AAdaptKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AAdaptKit")
-include(':AAdaptKit:systembar')
 
 
