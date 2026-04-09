@@ -35,13 +35,13 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.mozhimen.ASwiftKit:basick:2.0.3'
-    implementation project(':ASwiftKit:blurk')
     if (rootProject.name == "AImageKit") {
         implementation project(':glide')
     } else {
         implementation project(':AImageKit:glide')
     }
+    implementation 'com.github.mozhimen.ASwiftKit:basick:2.0.3'
+    implementation 'com.github.mozhimen.ASwiftKit:blurk:2.0.3'
 
     //test
     testImplementation 'junit:junit:4.13.2'

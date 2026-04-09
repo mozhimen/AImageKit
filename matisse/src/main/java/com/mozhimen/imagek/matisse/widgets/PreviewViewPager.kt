@@ -2,9 +2,7 @@ package com.mozhimen.imagek.matisse.widgets
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.MotionEvent
 import android.view.View
-import androidx.viewpager.widget.ViewPager
 import com.mozhimen.xmlk.pagerk.PagerKDisScroll
 import it.sephiroth.android.library.imagezoom.ImageViewTouch
 
