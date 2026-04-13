@@ -41,9 +41,9 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.mozhimen.ASwiftKit:basick:2.0.4'
-    implementation 'com.github.mozhimen.ASwiftKit:xmlk:2.0.4'
-    implementation 'com.github.mozhimen.ASwiftKit:uik-databinding:2.0.4'
+    implementation 'com.github.mozhimen.ASwiftKit:basick:2.1.6'
+    implementation 'com.github.mozhimen.ASwiftKit:xmlk:2.1.6'
+    implementation 'com.github.mozhimen.ASwiftKit:uik-databinding:2.1.6'
     implementation 'com.github.mozhimen.AAdaptKit:systembar:0.0.3'
     implementation 'com.github.mozhimen.ANetKit:glide:0.0.2'
     implementation 'com.github.mozhimen.APermissionKit_XXPermissions:permissionk_xxpermissions:0.0.3'
